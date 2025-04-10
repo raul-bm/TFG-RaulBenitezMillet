@@ -15,7 +15,7 @@ public class CameraAdjustments : MonoBehaviour
 
     void AdjustCameraOrtographicSize()
     {
-        float baseSize = 5f;
+        float baseSize = 6f;
         float targetAspect = 16 / 9f;
         float currentAspect = (float)Screen.width / Screen.height;
 
