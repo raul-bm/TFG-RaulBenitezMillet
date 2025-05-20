@@ -4,6 +4,25 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    private Room goesTo;
-    public Direction direction;
+    public GameObject doorSpawnOnOtherRoom;
+    public GameObject parentRoom;
+
+    private void Awake()
+    {
+        parentRoom = this.transform.parent.gameObject;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            other.transform.position = doorSpawnOnOtherRoom.transform.position;
+
+            GameObject otherRoom = doorSpawnOnOtherRoom.transform.parent.GetComponent<Door>().parentRoom;
+
+            other.GetComponent<PlayerController>().cameraController.ChangeCameraPosition(otherRoom);
+
+            otherRoom.GetComponent<Room>().InitializeRoom();
+        }
+    }
 }

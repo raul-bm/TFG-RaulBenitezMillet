@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4861b8df4348834c89fa79fca6a1a00, type: 3}
+  m_Name: 1Ice1Pommel
+  m_EditorClassIdentifier: 
+  partImageGameObject: {fileID: 21300000, guid: 68ddc31b044d4c34e8a1ce98343cf9b3, type: 3}
+  partImageIcon: {fileID: 21300000, guid: 68ddc31b044d4c34e8a1ce98343cf9b3, type: 3}
+  partName: Ice Pommel
+  description: First part of the Ice Sword
+  partType: 0
+  setOfSword: 0
+  statModifiers:
+  - stat: 0
+    value: -2
+  - stat: 1
+    value: 4
+  - stat: 2
+    value: 5
+  - stat: 5
+    value: 5
+  - stat: 6
+    value: 30
+  - stat: 8
+    value: 50

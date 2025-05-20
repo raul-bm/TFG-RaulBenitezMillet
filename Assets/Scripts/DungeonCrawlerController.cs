@@ -1,38 +1,214 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.VersionControl;
 using UnityEngine;
-
-public enum Direction
-{
-    up,
-    left,
-    down,
-    right
-}
 
 public class DungeonCrawlerController : MonoBehaviour
 {
-    public static List<Vector2Int> positionsVisited = new List<Vector2Int>();
-    private static readonly Dictionary<Direction, Vector2Int> directionMovementMap = new Dictionary<Direction, Vector2Int>
+    public static DungeonCrawlerController Instance { get; private set; }
+
+    [SerializeField] private GameObject roomNormalPrefab, roomInitialPrefab, roomBossPrefab, roomRewardPrefab;
+    [SerializeField] private GameObject roomsClassify;
+    [SerializeField] private Vector2Int distanceBetweenRooms;
+    [SerializeField] private DungeonGenerationData earlyLevels, middleLevels, finalLevels, postgameLevels;
+    [SerializeField] private string seed;
+
+    private List<RoomNode> roomNodes;
+    private Dictionary<Vector2Int, RoomNode> roomPositions;
+    private int actualLevel;
+    public DungeonGenerationData actualDifficultyData { get; private set; }
+
+    private RoomNode farthestRoomNode;
+
+    private List<Vector2Int> directions = new List<Vector2Int> { Vector2Int.up, Vector2Int.right, Vector2Int.down, Vector2Int.left };
+
+    private void Awake()
     {
-        {Direction.up, Vector2Int.up },
-        {Direction.left, Vector2Int.left },
-        {Direction.down, Vector2Int.down },
-        {Direction.right, Vector2Int.right }
-    };
+        Instance = this;
+    }
 
-    public static List<Vector2Int> GenerateDungeon(DungeonGenerationData dungeonData)
+    void Start()
     {
-        DungeonCrawler dungeonCrawler = new DungeonCrawler(Vector2Int.zero);
+        actualLevel = 1;
 
-        int positionsOnDungeon = Random.Range(dungeonData.salasMin, dungeonData.salasMax);
+        GameManager.Instance.rng = new System.Random(seed.GetHashCode());
 
-        while(positionsVisited.Count < positionsOnDungeon)
+        roomNodes = new List<RoomNode>();
+        roomPositions = new Dictionary<Vector2Int, RoomNode>();
+
+        GenerateNodeTree();
+        //ShowNodeTree();
+        SaveRoomPositions();
+        ChangeRoomType();
+        InstanceRooms();
+    }
+
+    private void GenerateNodeTree()
+    {
+        // CHANGE IT
+        if (actualLevel <= 3) actualDifficultyData = earlyLevels;
+        else if (actualLevel <= 6) actualDifficultyData = middleLevels;
+        else if (actualLevel <= 10) actualDifficultyData = finalLevels;
+        else actualDifficultyData = postgameLevels;
+
+        roomNodes.Clear();
+
+        int roomId = 0;
+
+        RoomNode initialNode = new RoomNode(roomId++);
+        initialNode.SetDistance(0);
+        roomNodes.Add(initialNode);
+
+        farthestRoomNode = initialNode;
+
+        int quantityRooms = GameManager.Instance.rng.Next(actualDifficultyData.minRooms, actualDifficultyData.maxRooms);
+
+        for(int i = roomNodes.Count; i <= quantityRooms; i++)
         {
-            Vector2Int newPos = dungeonCrawler.Move(directionMovementMap);
-            positionsVisited.Add(newPos);
+            RoomNode parentNode;
+
+            do
+            {
+                parentNode = roomNodes[GameManager.Instance.rng.Next(roomNodes.Count)];
+            } while (!parentNode.CanConnectMoreRooms());
+
+            RoomNode newRoom = new RoomNode(roomId++, parentNode);
+
+            parentNode.Connect(newRoom);
+            roomNodes.Add(newRoom);
+
+            if (newRoom.distance > farthestRoomNode.distance)
+            {
+                farthestRoomNode = newRoom;
+            }
+        }
+    }
+
+    #region DEBUG_SHOW NODE TREE
+    private void ShowNodeTree()
+    {
+        string message = ShowNodeTree(roomNodes[0]);
+
+        Debug.Log(message);
+    }
+
+    private string ShowNodeTree(RoomNode actualRoom)
+    {
+        string message = "";
+
+        message += actualRoom.id.ToString() + " - ";
+
+        for (int i = 0; i < actualRoom.descendants.Count; i++)
+        {
+            message += ShowNodeTree(actualRoom.descendants[i]);
+
+            message += actualRoom.id.ToString() + " - ";
         }
 
-        return positionsVisited;
+        return message;
+    }
+    #endregion
+
+    public void SaveRoomPositions()
+    {    
+        roomPositions.Clear();
+        // Add first room on (0, 0)
+        roomNodes[0].SetPosition(Vector2Int.zero);
+        roomPositions.Add(Vector2Int.zero, roomNodes[0]);
+
+        SaveRoomPositions(roomNodes[0]);
+    }
+
+    public void SaveRoomPositions(RoomNode actualRoomNode)
+    {
+        List<Vector2Int> directionsAvailable = new List<Vector2Int>(directions);
+
+        foreach (RoomNode descendant in actualRoomNode.descendants)
+        {
+            List<Vector2Int> directionsForCheck = new List<Vector2Int>(directionsAvailable);
+            Vector2Int directionGood;
+            int emptyAvailable;
+            bool directionFound = false;
+
+            do
+            {
+                directionGood = directionsForCheck[GameManager.Instance.rng.Next(directionsForCheck.Count)];
+                directionsForCheck.Remove(directionGood);
+
+                //Debug.Log("Count: " + directionsForCheck.Count + " - ID: " + actualRoomNode.id + " - Descendant: " + descendant.id);
+
+                if(!roomPositions.ContainsKey(actualRoomNode.position + directionGood))
+                {
+                    emptyAvailable = 0;
+                    for (int i = 0; i < directions.Count; i++)
+                    {
+                        if (!roomPositions.ContainsKey(actualRoomNode.position + directionGood + directions[i])) emptyAvailable++;
+                    }
+
+                    if (emptyAvailable >= descendant.descendants.Count) directionFound = true;
+                }
+            } while (!directionFound && directionsForCheck.Count > 0);
+
+            // Aux room if good direction not found
+
+            directionsAvailable.Remove(directionGood);
+
+            /*Debug.Log(directionGood);
+            Debug.Log(actualRoomNode.position + directionGood);
+            Debug.Log(descendant.id);*/
+            Vector2Int positionNewRoom = actualRoomNode.position + directionGood;
+            descendant.SetPosition(positionNewRoom);
+            roomPositions.Add(positionNewRoom, descendant);
+        }
+
+        foreach(RoomNode descendant in actualRoomNode.descendants)
+        {
+            SaveRoomPositions(descendant);
+        }
+    }
+
+    public void ChangeRoomType()
+    {
+        // Boss room
+        farthestRoomNode.SetRoomType(RoomType.Boss);
+
+        // Reward rooms
+        for(int i = 0; i < actualDifficultyData.rewardRooms; i++)
+        {
+            RoomNode actualNodeWhile = roomNodes[0];
+
+            while(actualNodeWhile.roomType != RoomType.Normal) actualNodeWhile = roomNodes[GameManager.Instance.rng.Next(roomNodes.Count)];
+
+            actualNodeWhile.SetRoomType(RoomType.Reward);
+        }
+    }
+
+    public void InstanceRooms()
+    {
+        foreach(var roomNodeDictionary in roomPositions)
+        {
+            Vector3 roomPosition = new Vector3(roomNodeDictionary.Value.position.x * distanceBetweenRooms.x, roomNodeDictionary.Value.position.y * distanceBetweenRooms.y, 0);
+
+            GameObject prefabToInstantiate;
+
+            if (roomNodeDictionary.Value.roomType == RoomType.Normal) prefabToInstantiate = roomNormalPrefab;
+            else if (roomNodeDictionary.Value.roomType == RoomType.Initial) prefabToInstantiate = roomInitialPrefab;
+            else if (roomNodeDictionary.Value.roomType == RoomType.Reward) prefabToInstantiate = roomRewardPrefab;
+            else prefabToInstantiate = roomBossPrefab;
+
+            GameObject roomGenerated = Instantiate(prefabToInstantiate, roomPosition, Quaternion.identity, roomsClassify.transform);
+
+            // Make a double connection --> Room <-> RoomNode
+            roomGenerated.GetComponent<Room>().thisRoomNode = roomNodeDictionary.Value;
+            roomNodeDictionary.Value.SetRoomToThisNode(roomGenerated);
+        }
+
+        foreach(var roomNodeDictionary in roomPositions)
+        {
+            roomNodeDictionary.Value.roomGameObject.GetComponent<Room>().SetDoors();
+            roomNodeDictionary.Value.roomGameObject.GetComponent<Room>().ChangeTextRoom();
+        }
+
+        // TODO: Poner los scripts RoomNodes a cada GameObject Room y poner la funcionalidad de las puertas
     }
 }

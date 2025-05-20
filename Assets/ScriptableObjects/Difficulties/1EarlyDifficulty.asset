@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c66858ad0e432654d8c8a221a73b1731, type: 3}
+  m_Name: 1EarlyDifficulty
+  m_EditorClassIdentifier: 
+  difficulty: 0
+  minRooms: 4
+  maxRooms: 6
+  rewardRooms: 1
+  poolObjectsRewardRoom:
+  - {fileID: 11400000, guid: 6bb555247e41b0042b55929ec25514b0, type: 2}
+  - {fileID: 11400000, guid: d4c72e51ab33c09409fdd19d798144b6, type: 2}
+  - {fileID: 11400000, guid: 8b79ca73c4211f5498db80634fd6c09a, type: 2}
+  - {fileID: 11400000, guid: 9d6f0d96f4d8e684ab43f2c5c5d8fc53, type: 2}
+  - {fileID: 11400000, guid: 1ef716fd1046b924eb075a216f41c60f, type: 2}
+  - {fileID: 11400000, guid: fb524aa971f9c954d9918032d65ea728, type: 2}
+  - {fileID: 11400000, guid: bf4108208155a874ab3c95f62ebd2907, type: 2}
+  - {fileID: 11400000, guid: 89792b5e7f8e7e7478a3633f76a3a646, type: 2}
