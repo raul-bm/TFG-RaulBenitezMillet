@@ -20,6 +20,8 @@ public class Door : MonoBehaviour
 
             GameObject otherRoom = doorSpawnOnOtherRoom.transform.parent.GetComponent<Door>().parentRoom;
 
+            MinimapManager.Instance.RevealRoom(otherRoom.GetComponent<Room>().thisRoomNode.position, otherRoom.GetComponent<Room>().thisRoomNode);
+
             other.GetComponent<PlayerController>().cameraController.ChangeCameraPosition(otherRoom);
 
             otherRoom.GetComponent<Room>().InitializeRoom();

@@ -25,7 +25,7 @@ public class UI : MonoBehaviour
 
     public RectTransform inventoryArea;
 
-    public Image cooldownImageFiller;
+    public Image attackCooldownImageFiller;
     public Image healthImageFiller;
 
     // First GameObject = Slot ---- Second GameObject = the added sword part

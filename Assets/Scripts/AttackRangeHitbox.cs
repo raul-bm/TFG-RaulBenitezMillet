@@ -10,7 +10,7 @@ public class AttackRangeHitbox : MonoBehaviour
     {
         if(other.gameObject.tag == "Enemy")
         {
-            other.gameObject.GetComponent<Enemy>().TakeDamage(playerScript.playerStats.GetStat(StatType.Damage));
+            other.gameObject.GetComponent<EnemyBase>().TakeDamage(playerScript.playerStats.GetStat(StatType.Damage));
         }
     }
 }

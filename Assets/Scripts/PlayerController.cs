@@ -43,11 +43,11 @@ public class PlayerController : MonoBehaviour
         if(attacking && timerCooldown <= currentAttackCooldown)
         {
             timerCooldown += Time.deltaTime;
-            UI.Instance.cooldownImageFiller.fillAmount = timerCooldown / currentAttackCooldown;
+            UI.Instance.attackCooldownImageFiller.fillAmount = timerCooldown / currentAttackCooldown;
 
             if(timerCooldown > currentAttackCooldown)
             {
-                UI.Instance.cooldownImageFiller.fillAmount = 1f;
+                UI.Instance.attackCooldownImageFiller.fillAmount = 1f;
                 attacking = false;
             }
         }
@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator AttackTimeout()
     {
         attacking = true;
-        UI.Instance.cooldownImageFiller.fillAmount = 0f;
+        UI.Instance.attackCooldownImageFiller.fillAmount = 0f;
         timerCooldown = 0f;
         attackRangeHitbox.SetActive(true);
         yield return new WaitForSeconds(0.3f);

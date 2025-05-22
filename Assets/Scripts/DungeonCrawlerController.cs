@@ -41,6 +41,8 @@ public class DungeonCrawlerController : MonoBehaviour
         SaveRoomPositions();
         ChangeRoomType();
         InstanceRooms();
+
+        MinimapManager.Instance.RevealRoom(Vector2Int.zero, roomPositions[Vector2Int.zero]);
     }
 
     private void GenerateNodeTree()
@@ -208,7 +210,5 @@ public class DungeonCrawlerController : MonoBehaviour
             roomNodeDictionary.Value.roomGameObject.GetComponent<Room>().SetDoors();
             roomNodeDictionary.Value.roomGameObject.GetComponent<Room>().ChangeTextRoom();
         }
-
-        // TODO: Poner los scripts RoomNodes a cada GameObject Room y poner la funcionalidad de las puertas
     }
 }
