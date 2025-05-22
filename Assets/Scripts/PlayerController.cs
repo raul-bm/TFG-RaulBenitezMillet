@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject attackRangeHitbox;
     [SerializeField] private float distanceAttackHitboxFromPlayer;
     public CameraController cameraController;
-    [SerializeField] private PlayerStats playerStats;
+    public PlayerStats playerStats;
 
     private Rigidbody2D rb;
 
@@ -17,16 +17,40 @@ public class PlayerController : MonoBehaviour
     private Vector2 currentVelocity;
     private bool attacking;
 
-    public float damage { get; private set; } = 1f;
+    private float timerCooldown = 0f;
+
+    // VALUES PLAYER
+    public float currentHealth { get; private set; }
+    public float attackBaseCooldown { get; private set; } = 2f;
+    public float currentAttackCooldown { get; private set; } = 2f;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        playerStats.InitBaseStats();
+
+        currentHealth = 100f;
+        moveSpeed = 5f;
+
+        attackRangeHitbox.transform.localScale = new Vector3(attackRangeHitbox.transform.localScale.x, playerStats.GetStat(StatType.AttackRange));
     }
 
     private void Update()
     {
         moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+
+        if(attacking && timerCooldown <= currentAttackCooldown)
+        {
+            timerCooldown += Time.deltaTime;
+            UI.Instance.cooldownImageFiller.fillAmount = timerCooldown / currentAttackCooldown;
+
+            if(timerCooldown > currentAttackCooldown)
+            {
+                UI.Instance.cooldownImageFiller.fillAmount = 1f;
+                attacking = false;
+            }
+        }
 
         if (Input.GetKeyDown(KeyCode.Mouse0) && !attacking && Time.timeScale != 0f) Attack();
     }
@@ -56,9 +80,20 @@ public class PlayerController : MonoBehaviour
     IEnumerator AttackTimeout()
     {
         attacking = true;
+        UI.Instance.cooldownImageFiller.fillAmount = 0f;
+        timerCooldown = 0f;
         attackRangeHitbox.SetActive(true);
-        yield return new WaitForSeconds(0.5f); // Change for the attack speed of the player
-        attacking = false;
+        yield return new WaitForSeconds(0.3f);
         attackRangeHitbox.SetActive(false);
+    }
+
+    public void ApplySwordParts(List<SwordPartInventory> swordParts)
+    {
+        playerStats.ApplySwordParts(swordParts);
+
+        currentAttackCooldown = attackBaseCooldown / playerStats.GetStat(StatType.AttackSpeed);
+
+        // Change range
+        attackRangeHitbox.transform.localScale = new Vector3(attackRangeHitbox.transform.localScale.x, playerStats.GetStat(StatType.AttackRange));
     }
 }

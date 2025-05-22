@@ -12,34 +12,34 @@ public class PlayerStats : MonoBehaviour
 
     [SerializeField] private List<SwordSetScriptable> swordSetScriptables;
 
-    private void Start()
-    {
-        InitBaseStats();
-    }
-
     public void InitBaseStats(Dictionary<StatType, float> anotherBaseStats = null)
     {
         foreach(StatType stat in Enum.GetValues(typeof(StatType)))
         {
-            if(anotherBaseStats != null && anotherBaseStats.ContainsKey(stat))
+            if (anotherBaseStats != null && anotherBaseStats.ContainsKey(stat))
             {
                 baseStats[stat] = anotherBaseStats[stat];
                 currentStats[stat] = anotherBaseStats[stat];
             }
             else
             {
-                if(stat == StatType.CriticalChance)
+                switch (stat)
                 {
-                    baseStats[stat] = 10;
-                    currentStats[stat] = 10;
-                } else if(stat == StatType.LifeStealChance)
-                {
-                    baseStats[stat] = 5;
-                    currentStats[stat] = 5;
-                } else
-                {
-                    baseStats[stat] = 1f;
-                    currentStats[stat] = 1f;
+                    case (StatType.Damage):
+                        currentStats[stat] = baseStats[stat] = 10;
+                        break;
+
+                    case (StatType.AttackSpeed):
+                        currentStats[stat] = baseStats[stat] = 1;
+                        break;
+
+                    case (StatType.AttackRange):
+                        currentStats[stat] = baseStats[stat] = 1;
+                        break;
+
+                    case (StatType.Defense):
+                        currentStats[stat] = baseStats[stat] = 0;
+                        break;
                 }
             }
         }
@@ -59,7 +59,7 @@ public class PlayerStats : MonoBehaviour
         {
             foreach(var modifier in part.statModifiers)
             {
-                currentStats[modifier.stat] += modifier.value;
+                SaveStatValue(modifier);
             }
         }
 
@@ -87,25 +87,33 @@ public class PlayerStats : MonoBehaviour
                 {
                     foreach(var modifier in swordSet.statModifiersTwoParts)
                     {
-                        currentStats[modifier.stat] += modifier.value;
+                        SaveStatValue(modifier);
                     }
                 }
                 else if (countPartsOfSet[swordSet.swordSet] == 3)
                 {
                     foreach(var modifier in swordSet.statModifiersThreeParts)
                     {
-                        currentStats[modifier.stat] += modifier.value;
+                        SaveStatValue(modifier);
                     }
                 }
                 else if (countPartsOfSet[swordSet.swordSet] == 4)
                 {
                     foreach (var modifier in swordSet.statModifiersFourParts)
                     {
-                        currentStats[modifier.stat] += modifier.value;
+                        SaveStatValue(modifier);
                     }
                 }
             }
         }
+    }
+
+    private void SaveStatValue(StatModifier modifier)
+    {
+        currentStats[modifier.stat] += modifier.value;
+
+        if (modifier.stat == StatType.AttackRange || modifier.stat == StatType.AttackSpeed)
+            currentStats[modifier.stat] = Mathf.Min(3.0f, Mathf.Max(1.0f, currentStats[modifier.stat]));
     }
 
     public float GetStat(StatType type)
@@ -117,14 +125,22 @@ public class PlayerStats : MonoBehaviour
 
     private void ChangeCurrentStatsText()
     {
-        string text = "";
+        string textStats = "";
 
         foreach(var stat in currentStats)
         {
-            text += GetFormattedStatText(stat.Key);
+            textStats += GetFormattedStatText(stat.Key);
         }
 
-        UI.Instance.ChangeCurrentStatsText(text);
+        string textSets = "";
+
+        foreach(var countSet in countPartsOfSet)
+        {
+            if(countSet.Value > 1) textSets += GetFormattedSetText(countSet.Key, countSet.Value);
+        }
+
+        UI.Instance.ChangeCurrentStatsText(textStats);
+        UI.Instance.ChangeBonusSetText(textSets);
     }
 
     private string GetFormattedStatText(StatType type)
@@ -135,7 +151,7 @@ public class PlayerStats : MonoBehaviour
         float difference = currentValue - baseValue;
 
         string differenceText = "";
-
+        
         if (difference > 0) differenceText = "<color=green>(+" + difference + ")</color>";
         else if (difference < 0) differenceText = "<color=red>(" + difference + ")</color>";
 
@@ -143,8 +159,45 @@ public class PlayerStats : MonoBehaviour
 
         string text = "";
 
-        if (type == StatType.LifeStealChance || type == StatType.CriticalChance) text = "<color=" + color + ">" + UI.Instance.GetFormattedStatName(type) + ":</color> " + currentValue + "%" + differenceText + "\n";
-        else text = "<color=" + color + ">" + UI.Instance.GetFormattedStatName(type) + ":</color> " + currentValue + differenceText + "\n";
+        text = "<color=" + color + ">" + UI.Instance.GetFormattedStatName(type) + ":</color> " + currentValue + differenceText + "\n";
+
+        return text;
+    }
+
+    private string GetFormattedSetText(SetOfSword set, int count)
+    {
+        SwordSetScriptable setScriptable;
+
+        string text = "<b>";
+        text += "<color=" + UI.Instance.GetColorHexForEachSet(set) + ">" + set.ToString() + "</color> Sword Set (" + count + "/4)\n";
+
+        int i = 0;
+
+        do
+        {
+            setScriptable = swordSetScriptables[i];
+            i++;
+        } while (setScriptable.swordSet != set && i < swordSetScriptables.Count);
+
+        List<StatModifier> statModifiers = null;
+
+        if (count == 2) statModifiers = setScriptable.statModifiersTwoParts;
+        else if (count == 3) statModifiers = setScriptable.statModifiersThreeParts;
+        else if (count == 4) statModifiers = setScriptable.statModifiersFourParts;
+
+        foreach (StatModifier statModifier in statModifiers)
+        {
+            string valueText = "";
+
+            if (statModifier.value >= 0) valueText = "<color=green>+" + statModifier.value + "</color>";
+            else valueText = "<color=red>" + statModifier.value + "</color>";
+
+            string color = UI.Instance.GetColorHexForEachStat(statModifier.stat);
+
+            text += "<color=" + color + ">" + UI.Instance.GetFormattedStatName(statModifier.stat) + ":</color> " + valueText + "\n";
+        }
+
+        text += "\n";
 
         return text;
     }

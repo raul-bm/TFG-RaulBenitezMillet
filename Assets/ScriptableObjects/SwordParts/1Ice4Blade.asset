@@ -18,13 +18,6 @@ MonoBehaviour:
   description: Last part of the Ice Sword
   partType: 3
   setOfSword: 0
-  hpModifier: 0
-  damageModifier: 0
-  defenseModifier: 0
-  attackRangeModifier: 0
-  attackSpeedModifier: 0
-  moveSpeedModifier: 0
-  criticalChanceModifier: 0
-  criticalDamagePercentage: 0
-  lifeStealChanceModifier: 0
-  lifeStealPercentage: 0
+  statModifiers:
+  - stat: 3
+    value: 2

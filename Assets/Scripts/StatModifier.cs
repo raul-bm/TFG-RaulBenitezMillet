@@ -4,16 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum StatType {
-    HealthPoints,
     Damage,
     Defense,
     AttackRange,
     AttackSpeed,
-    MoveSpeed,
-    CriticalChance,
-    CriticalDamage,
-    LifeStealChance,
-    LifeSteal
 }
 
 [Serializable]

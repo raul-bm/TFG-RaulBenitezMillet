@@ -54,37 +54,11 @@ public class SwordPartInventory : MonoBehaviour, IBeginDragHandler, IDragHandler
 
         textToTooltip += "<b><color=" + UI.Instance.GetColorHexForEachSet(setOfSword) + ">" + setOfSword.ToString() + " Sword</color> Set</b>\n\n";
 
-        /*switch (setOfSword)
-        {
-            case (SetOfSword.Ice):
-                textToTooltip += "<color=#bddeec>Ice Sword</color>";
-                break;
-
-            case (SetOfSword.Blood):
-                textToTooltip += "<color=#8a0303>Blood Sword</color>";
-                break;
-        }
-
-        textToTooltip += " Set</b>\n\n";*/
-
         foreach( var modifier in statModifiers )
         {
             textToTooltip += "<b>";
-
-            textToTooltip += "<color=" + UI.Instance.GetColorHexForEachStat(modifier.stat) + ">" + UI.Instance.GetFormattedStatName(modifier.stat) + ":</color> " + (modifier.value >= 0 ? "+" : "") + modifier.value;
-
-            switch (modifier.stat)
-            {
-                case (StatType.CriticalChance):
-                case (StatType.LifeStealChance):
-                    textToTooltip += "%";
-                    break;
-
-                default:
-                    textToTooltip += "";
-                    break;
-            }
-
+            textToTooltip += "<color=" + UI.Instance.GetColorHexForEachStat(modifier.stat) + ">" + UI.Instance.GetFormattedStatName(modifier.stat) + ":</color> " + (modifier.value >= 0 ? "+" : "");
+            textToTooltip += modifier.value;
             textToTooltip += "</b>\n";
         }
     }

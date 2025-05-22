@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 using TMPro;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UI : MonoBehaviour
 {
@@ -17,12 +18,15 @@ public class UI : MonoBehaviour
     [SerializeField] private List<GameObject> dictionarySlotsPartsEquippedValues;
     [SerializeField] private TextMeshProUGUI currentStatsText;
     [SerializeField] private TextMeshProUGUI bonusSetText;
-    [SerializeField] private PlayerStats currentStatsPlayer;
+    [SerializeField] private PlayerController playerController;
     public List<GameObject> inventorySlots;
     public Dictionary<TypeSwordPart, GameObject> inventorySlotsPartsEquipped;
     public GameObject tooltipUI;
 
     public RectTransform inventoryArea;
+
+    public Image cooldownImageFiller;
+    public Image healthImageFiller;
 
     // First GameObject = Slot ---- Second GameObject = the added sword part
     private Dictionary<GameObject, GameObject> inventorySlotsOccupied = new Dictionary<GameObject, GameObject>();
@@ -223,6 +227,8 @@ public class UI : MonoBehaviour
 
         if (oldSlot.GetComponent<SlotPartEquipped>() == null) inventorySlotsOccupied.Remove(oldSlot);
         else inventorySlotsPartsEquippedOccupied.Remove(oldSlot);
+
+        ApplySwordParts();
     }
 
     public bool EquipPartSword(GameObject swordPart, GameObject oldSlot, GameObject newSlot) // SIEMRPE NEWSLOT ES UN SLOT DEL EQUIPAMIENTO
@@ -279,7 +285,7 @@ public class UI : MonoBehaviour
             swordParts.Add(swordPartDictionary.Value.GetComponent<SwordPartInventory>());
         }
 
-        currentStatsPlayer.ApplySwordParts(swordParts);
+        playerController.ApplySwordParts(swordParts);
     }
 
     // Returns the equivalent hex color of the stat type for showing it on UI
@@ -289,10 +295,6 @@ public class UI : MonoBehaviour
 
         switch(type)
         {
-            case (StatType.HealthPoints):
-                hexColor = "#e74c3c";
-                break;
-
             case (StatType.Damage):
                 hexColor = "#e67e22";
                 break;
@@ -307,26 +309,6 @@ public class UI : MonoBehaviour
 
             case (StatType.AttackSpeed):
                 hexColor = "#f1c40f";
-                break;
-
-            case (StatType.MoveSpeed):
-                hexColor = "#2ecc71";
-                break;
-
-            case (StatType.CriticalChance):
-                hexColor = "#1abc9c";
-                break;
-
-            case (StatType.CriticalDamage):
-                hexColor = "#c0392b";
-                break;
-
-            case (StatType.LifeStealChance):
-                hexColor = "#fd79a8";
-                break;
-
-            case (StatType.LifeSteal):
-                hexColor = "#b33771";
                 break;
 
             default:

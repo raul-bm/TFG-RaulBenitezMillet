@@ -18,13 +18,6 @@ MonoBehaviour:
   description: Third part of the Blood Sword
   partType: 2
   setOfSword: 1
-  hpModifier: 0
-  damageModifier: 0
-  defenseModifier: 0
-  attackRangeModifier: 0
-  attackSpeedModifier: 0
-  moveSpeedModifier: 0
-  criticalChanceModifier: 0
-  criticalDamagePercentage: 0
-  lifeStealChanceModifier: 0
-  lifeStealPercentage: 0
+  statModifiers:
+  - stat: 1
+    value: 5

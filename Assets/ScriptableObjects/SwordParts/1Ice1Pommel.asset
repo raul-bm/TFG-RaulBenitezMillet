@@ -19,15 +19,7 @@ MonoBehaviour:
   partType: 0
   setOfSword: 0
   statModifiers:
-  - stat: 0
-    value: -2
   - stat: 1
     value: 4
   - stat: 2
     value: 5
-  - stat: 5
-    value: 5
-  - stat: 6
-    value: 30
-  - stat: 8
-    value: 50

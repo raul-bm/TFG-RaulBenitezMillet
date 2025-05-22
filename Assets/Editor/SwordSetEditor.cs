@@ -136,7 +136,7 @@ public class SwordSetEditor : Editor
 
         EditorGUILayout.Space(5);
 
-        if (GUILayout.Button("Add Stat for 3 Parts"))
+        if (GUILayout.Button("Add Stat for 4 Parts"))
         {
             bool exists = swordSet.statModifiersFourParts.Exists(x => x.stat == newStatTypeFourParts);
 
