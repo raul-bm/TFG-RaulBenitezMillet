@@ -20,6 +20,7 @@ public class RoomNode
     public bool isInitial { get; private set; }
     public GameObject roomGameObject { get; private set; }
     public RoomType roomType { get; private set; }
+    public int enemiesCount { get; private set; }
 
     // Constructor for the initial node
     public RoomNode(int id)
@@ -90,5 +91,10 @@ public class RoomNode
     public void SetRoomToThisNode(GameObject room)
     {
         roomGameObject = room;
+    }
+
+    public void SetEnemiesCountToRoom(int count)
+    {
+        enemiesCount = count;
     }
 }

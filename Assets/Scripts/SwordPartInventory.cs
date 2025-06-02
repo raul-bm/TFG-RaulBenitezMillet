@@ -52,12 +52,12 @@ public class SwordPartInventory : MonoBehaviour, IBeginDragHandler, IDragHandler
         textToTooltip += "<b>" + partName + "</b>\n\n";
         textToTooltip += description + "\n\n";
 
-        textToTooltip += "<b><color=" + UI.Instance.GetColorHexForEachSet(setOfSword) + ">" + setOfSword.ToString() + " Sword</color> Set</b>\n\n";
+        textToTooltip += "<b><color=" + InventoryUI.Instance.GetColorHexForEachSet(setOfSword) + ">" + setOfSword.ToString() + " Sword</color> Set</b>\n\n";
 
         foreach( var modifier in statModifiers )
         {
             textToTooltip += "<b>";
-            textToTooltip += "<color=" + UI.Instance.GetColorHexForEachStat(modifier.stat) + ">" + UI.Instance.GetFormattedStatName(modifier.stat) + ":</color> " + (modifier.value >= 0 ? "+" : "");
+            textToTooltip += "<color=" + InventoryUI.Instance.GetColorHexForEachStat(modifier.stat) + ">" + InventoryUI.Instance.GetFormattedStatName(modifier.stat) + ":</color> " + (modifier.value >= 0 ? "+" : "");
             textToTooltip += modifier.value;
             textToTooltip += "</b>\n";
         }
@@ -83,15 +83,15 @@ public class SwordPartInventory : MonoBehaviour, IBeginDragHandler, IDragHandler
         // Si el raycast da al objeto coge el slot (si acaso sale fuera del slot el raycast, igual vuelve a su posicion)
         if (dropTarget != null && !dropTarget.CompareTag("Slot")) dropTarget = dropTarget.transform.parent.gameObject;
 
-        bool isInsideInventory = RectTransformUtility.RectangleContainsScreenPoint(UI.Instance.inventoryArea, Input.mousePosition);
+        bool isInsideInventory = RectTransformUtility.RectangleContainsScreenPoint(InventoryUI.Instance.inventoryArea, Input.mousePosition);
 
         if (dropTarget != null && dropTarget.CompareTag("Slot"))
         {
             // Si se mueve a un slot de inventario se cambia a ese slot (y en el que estaba se pone el objeto que hay en el slot target si hay un objeto)
-            if (UI.Instance.inventorySlots.Contains(dropTarget))
-                UI.Instance.ChangeSwordPartSlotInventory(this.gameObject, originalParent.gameObject, dropTarget);
+            if (InventoryUI.Instance.inventorySlots.Contains(dropTarget))
+                InventoryUI.Instance.ChangeSwordPartSlotInventory(this.gameObject, originalParent.gameObject, dropTarget);
             // Si se mueve a un slot de parte equipada se intenta equipar
-            else if(!UI.Instance.EquipPartSword(this.gameObject, originalParent.gameObject, dropTarget))
+            else if(!InventoryUI.Instance.EquipPartSword(this.gameObject, originalParent.gameObject, dropTarget))
             {
                 transform.SetParent(originalParent);
                 rectTransform.localPosition = Vector3.zero;
@@ -108,10 +108,10 @@ public class SwordPartInventory : MonoBehaviour, IBeginDragHandler, IDragHandler
         {
             if (originalParent.gameObject.GetComponent<SlotPartEquipped>() == null)
             {
-                UI.Instance.DropAtPlayerPosition(partScriptable, originalParent.gameObject);
-                UI.Instance.numActualObjects--;
+                InventoryUI.Instance.DropAtPlayerPosition(partScriptable, originalParent.gameObject);
+                InventoryUI.Instance.numActualObjects--;
             }
-            else UI.Instance.DropOtherParts(this.gameObject);
+            else InventoryUI.Instance.DropOtherParts(this.gameObject);
 
             Destroy(this.gameObject);
         }

@@ -13,14 +13,14 @@ public class TooltipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        UI.Instance.tooltipUI.GetComponent<TooltipUI>().ChangeText(swordPartInventory.textToTooltip);
+        InventoryUI.Instance.tooltipUI.GetComponent<TooltipUI>().ChangeText(swordPartInventory.textToTooltip);
         showCoroutine = StartCoroutine(ShowTooltipDelayed());
     }
 
     private IEnumerator ShowTooltipDelayed()
     {
         yield return new WaitForSecondsRealtime(delay);
-        TooltipUI tooltip = UI.Instance.tooltipUI.GetComponent<TooltipUI>();
+        TooltipUI tooltip = InventoryUI.Instance.tooltipUI.GetComponent<TooltipUI>();
         tooltip.ShowTooltip();
     }
 
@@ -28,7 +28,7 @@ public class TooltipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     {
         if(showCoroutine != null) StopCoroutine(showCoroutine);
 
-        TooltipUI tooltip = UI.Instance.tooltipUI.GetComponent<TooltipUI>();
+        TooltipUI tooltip = InventoryUI.Instance.tooltipUI.GetComponent<TooltipUI>();
         tooltip.HideTooltip();
     }
 }

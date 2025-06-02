@@ -13,5 +13,17 @@ MonoBehaviour:
   m_Name: 3FinalDifficulty
   m_EditorClassIdentifier: 
   difficulty: 2
-  minRooms: 0
-  maxRooms: 0
+  minRooms: 10
+  maxRooms: 13
+  rewardRooms: 3
+  poolObjectsRewardRoom:
+  - {fileID: 11400000, guid: 6bb555247e41b0042b55929ec25514b0, type: 2}
+  - {fileID: 11400000, guid: d4c72e51ab33c09409fdd19d798144b6, type: 2}
+  - {fileID: 11400000, guid: 8b79ca73c4211f5498db80634fd6c09a, type: 2}
+  - {fileID: 11400000, guid: 9d6f0d96f4d8e684ab43f2c5c5d8fc53, type: 2}
+  - {fileID: 11400000, guid: 1ef716fd1046b924eb075a216f41c60f, type: 2}
+  - {fileID: 11400000, guid: fb524aa971f9c954d9918032d65ea728, type: 2}
+  - {fileID: 11400000, guid: bf4108208155a874ab3c95f62ebd2907, type: 2}
+  - {fileID: 11400000, guid: 89792b5e7f8e7e7478a3633f76a3a646, type: 2}
+  enemiesPerRoomMin: 4
+  enemiesPerRoomMax: 5

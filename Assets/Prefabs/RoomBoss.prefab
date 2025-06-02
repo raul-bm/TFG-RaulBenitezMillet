@@ -106,7 +106,7 @@ MonoBehaviour:
   - {fileID: 1449118082856732271}
   - {fileID: 9147221729784072069}
   textMPRoom: {fileID: 7742327458153800834}
-  bossPrefab: {fileID: 6681832015799256664, guid: 265418ff539a1954f873deb0aca9a3d3, type: 3}
+  bossPrefab: {fileID: 6681832015799256664, guid: 0710a9c73d8b5d141b2746183c044d15, type: 3}
 --- !u!1 &6222783848300975023 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3418931310789948189, guid: 09efc89beaef8d74e90fa4545f2093f1, type: 3}

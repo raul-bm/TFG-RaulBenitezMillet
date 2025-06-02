@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Slot
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -46,9 +47,12 @@ TagManager:
   - name: UIRooms
     uniqueID: 2546447485
     locked: 0
+  - name: Player
+    uniqueID: 2182099489
+    locked: 0
   - name: SwordPart
     uniqueID: 3800565127
     locked: 0
-  - name: Player
-    uniqueID: 2182099489
+  - name: AttackHitbox
+    uniqueID: 958274595
     locked: 0

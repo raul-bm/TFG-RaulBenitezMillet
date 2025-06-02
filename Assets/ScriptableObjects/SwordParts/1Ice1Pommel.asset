@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4861b8df4348834c89fa79fca6a1a00, type: 3}
   m_Name: 1Ice1Pommel
   m_EditorClassIdentifier: 
-  partImageGameObject: {fileID: 21300000, guid: 68ddc31b044d4c34e8a1ce98343cf9b3, type: 3}
-  partImageIcon: {fileID: 21300000, guid: 68ddc31b044d4c34e8a1ce98343cf9b3, type: 3}
+  partImageGameObject: {fileID: 2132573913, guid: ce570795e2eca53419db50365796ab59, type: 3}
+  partImageIcon: {fileID: 2132573913, guid: ce570795e2eca53419db50365796ab59, type: 3}
   partName: Ice Pommel
   description: First part of the Ice Sword
   partType: 0

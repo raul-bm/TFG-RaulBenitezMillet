@@ -64,7 +64,7 @@ public class EnemyBase : MonoBehaviour
         Debug.Log("Enemy attacks!");
     }
 
-    public virtual void TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
         health -= damage;
         if (health <= 0) Destroy(gameObject);

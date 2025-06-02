@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
         currentHealth = 100f;
         moveSpeed = 5f;
 
-        attackRangeHitbox.transform.localScale = new Vector3(attackRangeHitbox.transform.localScale.x, playerStats.GetStat(StatType.AttackRange));
+        attackRangeHitbox.transform.localScale = new Vector3(playerStats.GetStat(StatType.AttackRange), playerStats.GetStat(StatType.AttackRange));
     }
 
     private void Update()
@@ -74,17 +74,11 @@ public class PlayerController : MonoBehaviour
         float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
         attackRangeHitbox.transform.rotation = Quaternion.Euler(0f, 0f, -angle);
 
-        StartCoroutine(AttackTimeout());
-    }
-
-    IEnumerator AttackTimeout()
-    {
         attacking = true;
         UI.Instance.attackCooldownImageFiller.fillAmount = 0f;
         timerCooldown = 0f;
         attackRangeHitbox.SetActive(true);
-        yield return new WaitForSeconds(0.3f);
-        attackRangeHitbox.SetActive(false);
+        attackRangeHitbox.GetComponent<AttackRangeHitbox>().ShowAttackAnimation();
     }
 
     public void ApplySwordParts(List<SwordPartInventory> swordParts)
@@ -94,6 +88,6 @@ public class PlayerController : MonoBehaviour
         currentAttackCooldown = attackBaseCooldown / playerStats.GetStat(StatType.AttackSpeed);
 
         // Change range
-        attackRangeHitbox.transform.localScale = new Vector3(attackRangeHitbox.transform.localScale.x, playerStats.GetStat(StatType.AttackRange));
+        attackRangeHitbox.transform.localScale = new Vector3(playerStats.GetStat(StatType.AttackRange), playerStats.GetStat(StatType.AttackRange));
     }
 }

@@ -139,8 +139,8 @@ public class PlayerStats : MonoBehaviour
             if(countSet.Value > 1) textSets += GetFormattedSetText(countSet.Key, countSet.Value);
         }
 
-        UI.Instance.ChangeCurrentStatsText(textStats);
-        UI.Instance.ChangeBonusSetText(textSets);
+        InventoryUI.Instance.ChangeCurrentStatsText(textStats);
+        InventoryUI.Instance.ChangeBonusSetText(textSets);
     }
 
     private string GetFormattedStatText(StatType type)
@@ -155,11 +155,11 @@ public class PlayerStats : MonoBehaviour
         if (difference > 0) differenceText = "<color=green>(+" + difference + ")</color>";
         else if (difference < 0) differenceText = "<color=red>(" + difference + ")</color>";
 
-        string color = UI.Instance.GetColorHexForEachStat(type);
+        string color = InventoryUI.Instance.GetColorHexForEachStat(type);
 
         string text = "";
 
-        text = "<color=" + color + ">" + UI.Instance.GetFormattedStatName(type) + ":</color> " + currentValue + differenceText + "\n";
+        text = "<color=" + color + ">" + InventoryUI.Instance.GetFormattedStatName(type) + ":</color> " + currentValue + differenceText + "\n";
 
         return text;
     }
@@ -169,7 +169,7 @@ public class PlayerStats : MonoBehaviour
         SwordSetScriptable setScriptable;
 
         string text = "<b>";
-        text += "<color=" + UI.Instance.GetColorHexForEachSet(set) + ">" + set.ToString() + "</color> Sword Set (" + count + "/4)\n";
+        text += "<color=" + InventoryUI.Instance.GetColorHexForEachSet(set) + ">" + set.ToString() + "</color> Sword Set (" + count + "/4)\n";
 
         int i = 0;
 
@@ -192,9 +192,9 @@ public class PlayerStats : MonoBehaviour
             if (statModifier.value >= 0) valueText = "<color=green>+" + statModifier.value + "</color>";
             else valueText = "<color=red>" + statModifier.value + "</color>";
 
-            string color = UI.Instance.GetColorHexForEachStat(statModifier.stat);
+            string color = InventoryUI.Instance.GetColorHexForEachStat(statModifier.stat);
 
-            text += "<color=" + color + ">" + UI.Instance.GetFormattedStatName(statModifier.stat) + ":</color> " + valueText + "\n";
+            text += "<color=" + color + ">" + InventoryUI.Instance.GetFormattedStatName(statModifier.stat) + ":</color> " + valueText + "\n";
         }
 
         text += "\n";

@@ -29,8 +29,6 @@ public class MinimapManager : MonoBehaviour
 
     public void RevealRoom(Vector2Int playerRoomPos, RoomNode roomActualNode)
     {
-        Debug.Log("Minimapa");
-
         if(!roomsVisited.Contains(playerRoomPos))
         {
             // Room icon instantiate
@@ -82,5 +80,15 @@ public class MinimapManager : MonoBehaviour
         }
 
         minimapContent.localPosition = targetPosition;
+    }
+
+    public void ResetMinimap()
+    {
+        minimapContent.localPosition = Vector3.zero;
+
+        for(int i = minimapContent.childCount - 1; i >= 0; i--) Destroy(minimapContent.GetChild(i).gameObject);
+
+        roomsShowed = new Dictionary<Vector2Int, GameObject>();
+        roomsVisited = new List<Vector2Int>();
     }
 }

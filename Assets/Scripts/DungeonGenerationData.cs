@@ -18,4 +18,6 @@ public class DungeonGenerationData : ScriptableObject
     public int maxRooms;
     public int rewardRooms;
     public List<SwordPartScripteable> poolObjectsRewardRoom;
+    public int enemiesPerRoomMin;
+    public int enemiesPerRoomMax;
 }

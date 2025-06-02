@@ -32,7 +32,7 @@ public class SwordPartPickup : MonoBehaviour
     private void Update()
     {
         if(isPlayerNearby && Input.GetKeyDown(KeyCode.E)) {
-            if(UI.Instance.AddObject(swordPartScripteableObj)) Destroy(gameObject);
+            if(InventoryUI.Instance.AddObject(swordPartScripteableObj)) Destroy(gameObject);
         }
     }
 

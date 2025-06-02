@@ -32,4 +32,9 @@ public class CameraController : MonoBehaviour
         
         isMoving = true;
     }
+
+    public void ResetCameraLevel()
+    {
+        transform.position = new Vector3(0, cameraVerticalAdjust, this.transform.position.z);
+    }
 }

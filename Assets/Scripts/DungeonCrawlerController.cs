@@ -7,6 +7,8 @@ public class DungeonCrawlerController : MonoBehaviour
 {
     public static DungeonCrawlerController Instance { get; private set; }
 
+    [SerializeField] private GameObject cameraPlayer;
+    [SerializeField] private GameObject player;
     [SerializeField] private GameObject roomNormalPrefab, roomInitialPrefab, roomBossPrefab, roomRewardPrefab;
     [SerializeField] private GameObject roomsClassify;
     [SerializeField] private Vector2Int distanceBetweenRooms;
@@ -22,6 +24,9 @@ public class DungeonCrawlerController : MonoBehaviour
 
     private List<Vector2Int> directions = new List<Vector2Int> { Vector2Int.up, Vector2Int.right, Vector2Int.down, Vector2Int.left };
 
+    public int enemiesToKillOnActualRoom = 0;
+    public int enemiesKilled = 0;
+
     private void Awake()
     {
         Instance = this;
@@ -29,28 +34,57 @@ public class DungeonCrawlerController : MonoBehaviour
 
     void Start()
     {
-        actualLevel = 1;
+        actualLevel = 0;
 
         GameManager.Instance.rng = new System.Random(seed.GetHashCode());
+
+        ProceduralGeneration();
+    }
+
+    public void ProceduralGeneration()
+    {
+        // Last level
+        if(actualLevel == 6)
+        {
+
+        } else
+        {
+            UI.Instance.LoadingScreenOn();
+
+            EraseLevel();
+
+            actualLevel++;
+
+            GenerateNodeTree();
+            //ShowNodeTree();
+            SaveRoomPositions();
+            ChangeRoomType();
+            SetEnemiesCountInEachRoom();
+            InstanceRooms();
+
+            MinimapManager.Instance.RevealRoom(Vector2Int.zero, roomPositions[Vector2Int.zero]);
+        }
+    }
+
+    private void EraseLevel()
+    {
+        player.transform.position = Vector3.zero;
+        cameraPlayer.GetComponent<CameraController>().ResetCameraLevel();
+
+        for (int i = roomsClassify.transform.childCount - 1; i >= 0; i--) Destroy(roomsClassify.transform.GetChild(i).gameObject);
 
         roomNodes = new List<RoomNode>();
         roomPositions = new Dictionary<Vector2Int, RoomNode>();
 
-        GenerateNodeTree();
-        //ShowNodeTree();
-        SaveRoomPositions();
-        ChangeRoomType();
-        InstanceRooms();
-
-        MinimapManager.Instance.RevealRoom(Vector2Int.zero, roomPositions[Vector2Int.zero]);
+        MinimapManager.Instance.ResetMinimap();
     }
 
     private void GenerateNodeTree()
     {
         // CHANGE IT
-        if (actualLevel <= 3) actualDifficultyData = earlyLevels;
-        else if (actualLevel <= 6) actualDifficultyData = middleLevels;
-        else if (actualLevel <= 10) actualDifficultyData = finalLevels;
+        if (actualLevel <= 2) actualDifficultyData = earlyLevels;
+        else if (actualLevel <= 4) actualDifficultyData = middleLevels;
+        else if (actualLevel <= 6) actualDifficultyData = finalLevels;
         else actualDifficultyData = postgameLevels;
 
         roomNodes.Clear();
@@ -185,6 +219,15 @@ public class DungeonCrawlerController : MonoBehaviour
         }
     }
 
+    private void SetEnemiesCountInEachRoom()
+    {
+        foreach(var roomNode in roomNodes)
+        {
+            if(roomNode.roomType == RoomType.Normal)
+                roomNode.SetEnemiesCountToRoom(GameManager.Instance.rng.Next(actualDifficultyData.enemiesPerRoomMin, actualDifficultyData.enemiesPerRoomMax + 1));
+        }
+    }
+
     public void InstanceRooms()
     {
         foreach(var roomNodeDictionary in roomPositions)
@@ -199,6 +242,9 @@ public class DungeonCrawlerController : MonoBehaviour
             else prefabToInstantiate = roomBossPrefab;
 
             GameObject roomGenerated = Instantiate(prefabToInstantiate, roomPosition, Quaternion.identity, roomsClassify.transform);
+
+            if (prefabToInstantiate == roomRewardPrefab)
+                roomGenerated.GetComponent<RoomReward>().SetSwordPartToSpawn();
 
             // Make a double connection --> Room <-> RoomNode
             roomGenerated.GetComponent<Room>().thisRoomNode = roomNodeDictionary.Value;
