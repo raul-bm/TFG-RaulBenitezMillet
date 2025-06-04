@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 228bfe81116b8dd4fb469911c791b290
+guid: 1914899e49adf144dabd282c653e20a0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,553 +110,553 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_0
+      name: Warrior_SheetnoEffect_cambiado - again_0
       rect:
         serializedVersion: 2
         x: 0
         y: 704
-        width: 69
+        width: 58
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7644bfb9b2ea4841af79c33c857a9c8
-      internalID: 2018043659
+      spriteID: c660ee7debf18f44cafc4dc3e26b55f9
+      internalID: 1708570064
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_1
+      name: Warrior_SheetnoEffect_cambiado - again_1
       rect:
         serializedVersion: 2
         x: 69
         y: 704
-        width: 69
+        width: 58
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 581ecd4786d8de04fa1bc1993a2e7923
-      internalID: 832755537
+      spriteID: d5ce4dc13d8faf44481962e59f68ece7
+      internalID: -1302857769
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_2
+      name: Warrior_SheetnoEffect_cambiado - again_2
       rect:
         serializedVersion: 2
         x: 138
         y: 704
-        width: 69
+        width: 58
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8bebc7e600a75c84eb7ec82a3cb96e0b
-      internalID: -804081971
+      spriteID: 25d26b6ceabda4a4b9717a75e35d135d
+      internalID: 1200871901
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_3
+      name: Warrior_SheetnoEffect_cambiado - again_3
       rect:
         serializedVersion: 2
         x: 207
         y: 704
-        width: 69
+        width: 58
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3cb1b1e3432e8c641a90d84330a11e3c
-      internalID: -2116002275
+      spriteID: f04a238fca19808408c3a115a983fe2a
+      internalID: -1848158499
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_4
+      name: Warrior_SheetnoEffect_cambiado - again_4
       rect:
         serializedVersion: 2
         x: 276
         y: 704
-        width: 69
+        width: 58
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b30eedc54c8d5c45be1bde3d41f3a48
-      internalID: -1476135344
+      spriteID: 3c7d81a979b94c64a95c549db85979fa
+      internalID: -725368023
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_5
+      name: Warrior_SheetnoEffect_cambiado - again_5
       rect:
         serializedVersion: 2
         x: 345
         y: 704
-        width: 69
+        width: 58
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1dcc1e4a2947fd34f807e018d15e4e6d
-      internalID: -2046003263
+      spriteID: 33547888e4a622546982aa7cd5ed0fba
+      internalID: -536348246
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_6
+      name: Warrior_SheetnoEffect_cambiado - again_6
       rect:
         serializedVersion: 2
         x: 0
         y: 660
-        width: 69
+        width: 58
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81e4ad019eebe2f41b524d1b6747c932
-      internalID: -2010939702
+      spriteID: 77197152807b255489f06ff762fb9936
+      internalID: -182872811
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_7
+      name: Warrior_SheetnoEffect_cambiado - again_7
       rect:
         serializedVersion: 2
         x: 69
         y: 660
-        width: 69
+        width: 58
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47ae36fa4921ee44c9a43d7290378835
-      internalID: 2120740149
+      spriteID: b462f77478368324eb4f8c893661cdea
+      internalID: -222157315
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_8
+      name: Warrior_SheetnoEffect_cambiado - again_8
       rect:
         serializedVersion: 2
         x: 138
         y: 660
-        width: 69
+        width: 58
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ba7d2a22b8cc274c8c3d4d520a3cfb0
-      internalID: -2065316457
+      spriteID: b4f88680ef68a1e409aa4bc15816ca95
+      internalID: 650490124
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_9
+      name: Warrior_SheetnoEffect_cambiado - again_9
       rect:
         serializedVersion: 2
         x: 207
         y: 660
-        width: 69
+        width: 58
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 731825b6340ec6d4f9de3b1189f6edbf
-      internalID: 1914675603
+      spriteID: f31d651d2ae8f92418c2dcfd8b5560d1
+      internalID: -1990601068
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_10
+      name: Warrior_SheetnoEffect_cambiado - again_10
       rect:
         serializedVersion: 2
         x: 276
         y: 660
-        width: 69
+        width: 58
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94770af89f5f51f448f770281e2d144c
-      internalID: 380409369
+      spriteID: 14e0f043dd8853843bb26a0fbd6dcd04
+      internalID: 71465052
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_11
+      name: Warrior_SheetnoEffect_cambiado - again_11
       rect:
         serializedVersion: 2
         x: 345
         y: 660
-        width: 69
+        width: 58
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d663376f09987f4e8e70b09502e72fd
-      internalID: 1152638246
+      spriteID: db3383e29f6970d43bc8020629afcb63
+      internalID: -960266587
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_12
+      name: Warrior_SheetnoEffect_cambiado - again_12
       rect:
         serializedVersion: 2
         x: 0
         y: 616
-        width: 69
+        width: 58
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: afc751ffdabea01479148d9a3affa30d
-      internalID: -2121715177
+      spriteID: 84afedd155a227a4b93a48b916c753d7
+      internalID: -1705857861
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_13
+      name: Warrior_SheetnoEffect_cambiado - again_13
       rect:
         serializedVersion: 2
         x: 69
         y: 616
-        width: 69
+        width: 58
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b523831ef387ad48a722fa639015e61
-      internalID: -1563757238
+      spriteID: f3ece9854afbeb4419a492f69c58af33
+      internalID: 1813119803
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_14
+      name: Warrior_SheetnoEffect_cambiado - again_14
       rect:
         serializedVersion: 2
         x: 138
         y: 616
-        width: 69
+        width: 58
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7aea207fcb6fcb6429be837c7ee13258
-      internalID: -1224496750
+      spriteID: 5952e4eae13b3424eb479c41f0bcae3c
+      internalID: -1959949994
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_15
+      name: Warrior_SheetnoEffect_cambiado - again_15
       rect:
         serializedVersion: 2
         x: 207
         y: 616
-        width: 69
+        width: 58
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ce9f83a5c3f56046a1746ca89772225
-      internalID: 1353027107
+      spriteID: 8ab77197522dad0419313a96f465ab04
+      internalID: -386083145
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_16
+      name: Warrior_SheetnoEffect_cambiado - again_16
       rect:
         serializedVersion: 2
         x: 276
         y: 616
-        width: 69
+        width: 58
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d7a2bdfdd589a9c4584d0cc0d02f0ecc
-      internalID: 259026160
+      spriteID: 1e98fc0cba8c6be43856e25e4c259e28
+      internalID: -1903162643
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_17
+      name: Warrior_SheetnoEffect_cambiado - again_17
       rect:
         serializedVersion: 2
         x: 345
         y: 616
-        width: 69
+        width: 58
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a38d4af129f519e4082e8cf9fdcf6782
-      internalID: -130293697
+      spriteID: c4f0b955e041c424f8c4046c03eaeaa0
+      internalID: 1219693649
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_18
+      name: Warrior_SheetnoEffect_cambiado - again_18
       rect:
         serializedVersion: 2
         x: 0
         y: 572
-        width: 69
+        width: 58
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bccebc4675b429647ab7d697f917dde2
-      internalID: 4330124
+      spriteID: 18e2f52da55aea943b9ace3339845bab
+      internalID: -423457557
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_19
+      name: Warrior_SheetnoEffect_cambiado - again_19
       rect:
         serializedVersion: 2
         x: 69
         y: 572
-        width: 69
+        width: 58
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7cacea4557073d47a4df78ad5395d11
-      internalID: 62426344
+      spriteID: f2eec571eac3b9f4c8a2a4376cbadb1b
+      internalID: 1853303271
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_20
+      name: Warrior_SheetnoEffect_cambiado - again_20
       rect:
         serializedVersion: 2
         x: 138
         y: 572
-        width: 69
+        width: 58
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a6dd5b98e2dda24aa8bceb451d8f529
-      internalID: -1933628677
+      spriteID: 51fdd5ae16e963b4fbabf5e792cb27a8
+      internalID: 143705322
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_21
+      name: Warrior_SheetnoEffect_cambiado - again_21
       rect:
         serializedVersion: 2
         x: 207
         y: 572
-        width: 69
+        width: 58
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9282a13a1b53c1a4382e0cb49a34e588
-      internalID: 1524092482
+      spriteID: e26786edb7a775b498db3d234eab5043
+      internalID: -1873224028
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_22
+      name: Warrior_SheetnoEffect_cambiado - again_22
       rect:
         serializedVersion: 2
         x: 276
         y: 572
-        width: 69
+        width: 58
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b4aa1178846ffb41a0f03fd82fc3fcf
-      internalID: -678592352
+      spriteID: 9ce363997e4559643b2c1bfd9ec22bd4
+      internalID: -1250293844
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_23
+      name: Warrior_SheetnoEffect_cambiado - again_23
       rect:
         serializedVersion: 2
         x: 345
         y: 572
-        width: 69
+        width: 58
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b05b58c9274901f45b0e8347c7eb2e5d
-      internalID: -1403935744
+      spriteID: 76a6f7d15bfb6234fba437eb4390f711
+      internalID: 1591198657
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_24
+      name: Warrior_SheetnoEffect_cambiado - again_24
       rect:
         serializedVersion: 2
         x: 0
         y: 528
-        width: 69
+        width: 58
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9eb491daf56ddc4c9a82e8b81d9e16f
-      internalID: -121704255
+      spriteID: 888bf2726fafea7458a9762fb61eb022
+      internalID: -2028324404
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_25
+      name: Warrior_SheetnoEffect_cambiado - again_25
       rect:
         serializedVersion: 2
         x: 69
         y: 528
-        width: 69
+        width: 58
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84b724e3ea4d08c4fa1010789f9d552a
-      internalID: 1719867156
+      spriteID: 4bd634436ae79c740815fe05d3b5527c
+      internalID: -1956891281
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_26
+      name: Warrior_SheetnoEffect_cambiado - again_26
       rect:
         serializedVersion: 2
         x: 138
@@ -664,20 +664,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 18a00988ddac92844bf77b332a76e1d6
-      internalID: 1030371190
+      spriteID: 699eb31f78698374d8faa6d33d48e809
+      internalID: -1511086725
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_27
+      name: Warrior_SheetnoEffect_cambiado - again_27
       rect:
         serializedVersion: 2
         x: 207
@@ -685,20 +685,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca175fe4006620c4dbe9d3e343317f11
-      internalID: -1313156407
+      spriteID: bee5d2e84b790e64abb2a3baf8f538d5
+      internalID: 1769477102
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_28
+      name: Warrior_SheetnoEffect_cambiado - again_28
       rect:
         serializedVersion: 2
         x: 276
@@ -706,20 +706,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8605a671986eff440a9b74b8e45d5c9a
-      internalID: -2069952569
+      spriteID: 55e760ddffa238e429c3f8455be6d2cb
+      internalID: -1599867071
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_29
+      name: Warrior_SheetnoEffect_cambiado - again_29
       rect:
         serializedVersion: 2
         x: 345
@@ -727,20 +727,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dcd7de51b66b9714396885a0dad44a30
-      internalID: -145916584
+      spriteID: 427c80df629e5ba4aaf8f42926b1f74a
+      internalID: -669246718
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_30
+      name: Warrior_SheetnoEffect_cambiado - again_30
       rect:
         serializedVersion: 2
         x: 0
@@ -748,20 +748,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 113b4a1cdad6e41498b37d0868d74457
-      internalID: -847576989
+      spriteID: 232f8177996e0744fb87888437cbd760
+      internalID: -1328919461
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_31
+      name: Warrior_SheetnoEffect_cambiado - again_31
       rect:
         serializedVersion: 2
         x: 69
@@ -769,20 +769,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f98e225e3c853a84d976438dbc040166
-      internalID: -954858654
+      spriteID: 51fbe612bd0111349925826975c9a8f1
+      internalID: -409862072
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_32
+      name: Warrior_SheetnoEffect_cambiado - again_32
       rect:
         serializedVersion: 2
         x: 138
@@ -790,20 +790,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5380435cde8899940b4d8a7c6f148b79
-      internalID: 1943617818
+      spriteID: 00147a0e53efb6b44b69a8e43d6110e0
+      internalID: -718252142
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_33
+      name: Warrior_SheetnoEffect_cambiado - again_33
       rect:
         serializedVersion: 2
         x: 207
@@ -811,20 +811,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 503c2337bfb35624b9c54e101130ebfb
-      internalID: -142433340
+      spriteID: 05b7d87a42ca02043ad51197b3c50a8b
+      internalID: -289299232
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_34
+      name: Warrior_SheetnoEffect_cambiado - again_34
       rect:
         serializedVersion: 2
         x: 276
@@ -832,20 +832,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c37f301c9d1de5a44a232cdf27be8807
-      internalID: 745054083
+      spriteID: 2eb4cd08e1c26224f946cc9f0b7fb7e1
+      internalID: -1180974017
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_35
+      name: Warrior_SheetnoEffect_cambiado - again_35
       rect:
         serializedVersion: 2
         x: 345
@@ -853,20 +853,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ac87ce90e2c1bf4cac9f2d4b9686fbc
-      internalID: -219661809
+      spriteID: 4043aba5af7b18e48ad6c14e456ca131
+      internalID: -1923027182
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_36
+      name: Warrior_SheetnoEffect_cambiado - again_36
       rect:
         serializedVersion: 2
         x: 0
@@ -874,20 +874,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dda676cc1be6605438b790ce7a77a3ec
-      internalID: 950550216
+      spriteID: 45b51132c0b65934da224b94c0e3c4c7
+      internalID: -573062963
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_37
+      name: Warrior_SheetnoEffect_cambiado - again_37
       rect:
         serializedVersion: 2
         x: 69
@@ -895,20 +895,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4653114b5976e84b9cb3b12fcd0d200
-      internalID: -439568056
+      spriteID: 8868d91262cd860498ef2a5f74305b7c
+      internalID: -2144862412
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_38
+      name: Warrior_SheetnoEffect_cambiado - again_38
       rect:
         serializedVersion: 2
         x: 138
@@ -916,20 +916,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4094cbbfa751524db8483c983d4c17a
-      internalID: 71379996
+      spriteID: 70abf57f859717c44b045ebf24d70dd1
+      internalID: -1626848587
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_39
+      name: Warrior_SheetnoEffect_cambiado - again_39
       rect:
         serializedVersion: 2
         x: 207
@@ -937,20 +937,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 553b52e6d2adacb46888a6c0037ee1d3
-      internalID: -2138370062
+      spriteID: 19ac3b997a74f7342823f5473e3f27a4
+      internalID: -2070511853
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_40
+      name: Warrior_SheetnoEffect_cambiado - again_40
       rect:
         serializedVersion: 2
         x: 276
@@ -958,20 +958,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d18ac5ac0135cd45a62ca013e66c8e3
-      internalID: 1951278707
+      spriteID: 83a4c07800b61eb4cb94062ef12c0722
+      internalID: 1442031467
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_41
+      name: Warrior_SheetnoEffect_cambiado - again_41
       rect:
         serializedVersion: 2
         x: 345
@@ -979,20 +979,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d41b91355aff7f41aa58f97a5e554aa
-      internalID: 1823333701
+      spriteID: d5e5236de10df5f49bfb293799079f0f
+      internalID: -696013501
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_42
+      name: Warrior_SheetnoEffect_cambiado - again_42
       rect:
         serializedVersion: 2
         x: 0
@@ -1000,20 +1000,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8368f8db8118cd5469c1810826fcd4c9
-      internalID: 792947772
+      spriteID: 4e5ed47d80cd7a349b9a05e9eab782e4
+      internalID: -559189377
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_43
+      name: Warrior_SheetnoEffect_cambiado - again_43
       rect:
         serializedVersion: 2
         x: 69
@@ -1021,20 +1021,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c68ae822d1fb4d54996a791e5b7f9525
-      internalID: -1096004143
+      spriteID: fad52a1ec6a05554784598110992af55
+      internalID: 329365860
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_44
+      name: Warrior_SheetnoEffect_cambiado - again_44
       rect:
         serializedVersion: 2
         x: 138
@@ -1042,20 +1042,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce91d55dc31683a4886ca7028797898c
-      internalID: 77538512
+      spriteID: 80bf3241541269445902f2f4beadfd7f
+      internalID: 1615409991
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_45
+      name: Warrior_SheetnoEffect_cambiado - again_45
       rect:
         serializedVersion: 2
         x: 207
@@ -1063,20 +1063,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df4052a60d596dc45b31b1743f79095c
-      internalID: -1568158669
+      spriteID: 9bd18c8469e30ab48beaee1a96aa0a0c
+      internalID: -1596297782
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_46
+      name: Warrior_SheetnoEffect_cambiado - again_46
       rect:
         serializedVersion: 2
         x: 276
@@ -1084,20 +1084,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a31f6f3f482f77947beb087bd6d40985
-      internalID: -1962960808
+      spriteID: 33c6325ed2fa84b4f96eb0056eeb9998
+      internalID: -1603565841
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_47
+      name: Warrior_SheetnoEffect_cambiado - again_47
       rect:
         serializedVersion: 2
         x: 345
@@ -1105,20 +1105,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d81bd33874e24dc41bf2055888f9274e
-      internalID: -1746339725
+      spriteID: de49371fa0512a74aad5cabd6afd3049
+      internalID: 1400860943
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_48
+      name: Warrior_SheetnoEffect_cambiado - again_48
       rect:
         serializedVersion: 2
         x: 0
@@ -1126,20 +1126,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 214e2893010bacd4e92d8ba85f9b9ee3
-      internalID: 2079195593
+      spriteID: d88873aa478c62647abeb9cc5cc1bb2f
+      internalID: -803382973
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_49
+      name: Warrior_SheetnoEffect_cambiado - again_49
       rect:
         serializedVersion: 2
         x: 69
@@ -1147,20 +1147,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33751c399a071184f846d6a2fb1f8694
-      internalID: -1703499222
+      spriteID: 57baddc864649214296e5ab7874fac9a
+      internalID: -194129411
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_50
+      name: Warrior_SheetnoEffect_cambiado - again_50
       rect:
         serializedVersion: 2
         x: 138
@@ -1168,20 +1168,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6048fe11a8e8ee7429b27736ab44871d
-      internalID: 1085531028
+      spriteID: b0112f35b84b06143bff834b31d77bbe
+      internalID: -949073208
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_51
+      name: Warrior_SheetnoEffect_cambiado - again_51
       rect:
         serializedVersion: 2
         x: 207
@@ -1189,20 +1189,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f3addc91e60eb649b26e4249f425dff
-      internalID: 1413398120
+      spriteID: 7772d6d397df8674cad6b1b5ff210cf1
+      internalID: 447805009
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_52
+      name: Warrior_SheetnoEffect_cambiado - again_52
       rect:
         serializedVersion: 2
         x: 276
@@ -1210,20 +1210,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf23cd419bef5fb4ead5b0146d3ee732
-      internalID: -247377354
+      spriteID: 1220e17ba5df7cf4d976cf2a263bc975
+      internalID: -1893951876
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_53
+      name: Warrior_SheetnoEffect_cambiado - again_53
       rect:
         serializedVersion: 2
         x: 345
@@ -1231,20 +1231,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 636e16f5cd573c64bbeb1b4f85b931f5
-      internalID: 524451477
+      spriteID: cf6269a08adac93468a0f877872d0d00
+      internalID: -310192622
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_54
+      name: Warrior_SheetnoEffect_cambiado - again_54
       rect:
         serializedVersion: 2
         x: 0
@@ -1252,20 +1252,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d77377cc0328320459d80b5e2e3607e3
-      internalID: -1333235678
+      spriteID: 6d2bb332606e2894698c00c9656d09e6
+      internalID: -75848256
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_55
+      name: Warrior_SheetnoEffect_cambiado - again_55
       rect:
         serializedVersion: 2
         x: 69
@@ -1273,20 +1273,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ef96bc07f951824fb348bb4d02a01fc
-      internalID: -451382652
+      spriteID: 9601d3d72cfa49d48ba82fc39a8f014d
+      internalID: -1865186338
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_56
+      name: Warrior_SheetnoEffect_cambiado - again_56
       rect:
         serializedVersion: 2
         x: 138
@@ -1294,20 +1294,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd066bc3fed09ad4f91350464e8c9805
-      internalID: -244120708
+      spriteID: f99c23d360108104684993fff78a4635
+      internalID: -535803052
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_57
+      name: Warrior_SheetnoEffect_cambiado - again_57
       rect:
         serializedVersion: 2
         x: 207
@@ -1315,20 +1315,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: faec1d8171cb04b40aead147b5c5a60e
-      internalID: -285738193
+      spriteID: 5d67eb1d692013248aaf74d1591c2335
+      internalID: 740108930
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_58
+      name: Warrior_SheetnoEffect_cambiado - again_58
       rect:
         serializedVersion: 2
         x: 276
@@ -1336,20 +1336,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 621062871cf0e3446af8810a76c03c43
-      internalID: -400960922
+      spriteID: 5c71fb74d53226e41a8686db2334f52f
+      internalID: 1779874203
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_59
+      name: Warrior_SheetnoEffect_cambiado - again_59
       rect:
         serializedVersion: 2
         x: 345
@@ -1357,20 +1357,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ffc5cbd8a700e4347b1e492d9477ed3a
-      internalID: -1957676013
+      spriteID: 3f9a54b99155f004a98867cf39e47987
+      internalID: 888532591
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_60
+      name: Warrior_SheetnoEffect_cambiado - again_60
       rect:
         serializedVersion: 2
         x: 0
@@ -1378,20 +1378,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 569db576727a7a745ba1d3ba08dff9a3
-      internalID: 1472193599
+      spriteID: 8804a42384a19914c948113a15a5f67a
+      internalID: -1903104547
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_61
+      name: Warrior_SheetnoEffect_cambiado - again_61
       rect:
         serializedVersion: 2
         x: 69
@@ -1399,20 +1399,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4da951b4d81ad5f4cad951d878bf88fd
-      internalID: -1660449342
+      spriteID: 46661af1fe8f38c408e13612a81a34fe
+      internalID: 844281273
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_62
+      name: Warrior_SheetnoEffect_cambiado - again_62
       rect:
         serializedVersion: 2
         x: 138
@@ -1420,20 +1420,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d397c70487d2eeb4eb4f296308957ade
-      internalID: -2044307657
+      spriteID: e4934078317c098428fcfabf50348997
+      internalID: -1607963198
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_63
+      name: Warrior_SheetnoEffect_cambiado - again_63
       rect:
         serializedVersion: 2
         x: 207
@@ -1441,20 +1441,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57ec27fcd0664b34abaed37d2c69baf4
-      internalID: 1323135676
+      spriteID: 23608c516334e7f4e95b31289276ac55
+      internalID: 1107793603
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_64
+      name: Warrior_SheetnoEffect_cambiado - again_64
       rect:
         serializedVersion: 2
         x: 276
@@ -1462,20 +1462,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3068d9dc56f2ea4fbbaff09c5ee47a3
-      internalID: 209735561
+      spriteID: 02d6d2bdaa604a24988aeed98de95878
+      internalID: -622643497
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_65
+      name: Warrior_SheetnoEffect_cambiado - again_65
       rect:
         serializedVersion: 2
         x: 345
@@ -1483,20 +1483,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48f4f42d25b03ea4b85767d3ae14e597
-      internalID: 2126758795
+      spriteID: 8cd7265bb5eda42459da84cfbc3c4a42
+      internalID: 1188095249
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_66
+      name: Warrior_SheetnoEffect_cambiado - again_66
       rect:
         serializedVersion: 2
         x: 0
@@ -1504,20 +1504,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 67afdb2e72d17d04393e4b3c96c1c199
-      internalID: -1785937801
+      spriteID: 409f047ff8acba0409254bcee52a96c6
+      internalID: -1400636803
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_67
+      name: Warrior_SheetnoEffect_cambiado - again_67
       rect:
         serializedVersion: 2
         x: 69
@@ -1525,20 +1525,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d197182910b6e14ca299140d694b884
-      internalID: 273098585
+      spriteID: e9ce1e27f48780343aafd6f88229400c
+      internalID: 400475830
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_68
+      name: Warrior_SheetnoEffect_cambiado - again_68
       rect:
         serializedVersion: 2
         x: 138
@@ -1546,146 +1546,146 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d0e1fe886737a604db62050b9f8201d3
-      internalID: -469184529
+      spriteID: 498330ffbe4baf142a30f6ee141ee781
+      internalID: 1891361612
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_69
+      name: Warrior_SheetnoEffect_cambiado - again_69
       rect:
         serializedVersion: 2
         x: 207
         y: 220
-        width: 69
+        width: 58
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16283c7322e7c4a4c8186f9e7cca4c96
-      internalID: -150112124
+      spriteID: 0afd119df56e22e4fa44dd0fc647ebf2
+      internalID: 797194176
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_70
+      name: Warrior_SheetnoEffect_cambiado - again_70
       rect:
         serializedVersion: 2
         x: 276
         y: 220
-        width: 69
+        width: 58
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62d86d89b9f27a24790cd73400e528ad
-      internalID: -913514578
+      spriteID: 99cb04aba484da646b83a601a42548e2
+      internalID: 1890641339
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_71
+      name: Warrior_SheetnoEffect_cambiado - again_71
       rect:
         serializedVersion: 2
         x: 345
         y: 220
-        width: 69
+        width: 58
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 905b7654486e63c43b584387afd8d574
-      internalID: 1029675980
+      spriteID: c1d89cdaeb86b3f449a7c9f5aac081b2
+      internalID: 1305838476
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_72
+      name: Warrior_SheetnoEffect_cambiado - again_72
       rect:
         serializedVersion: 2
         x: 0
         y: 176
-        width: 69
+        width: 58
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a934ce279061d843a00067f6eddc400
-      internalID: 738842481
+      spriteID: d63ff159175a99240a932a54443dd438
+      internalID: -951647204
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_73
+      name: Warrior_SheetnoEffect_cambiado - again_73
       rect:
         serializedVersion: 2
         x: 69
         y: 176
-        width: 69
+        width: 58
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b3aceff6a5dbae43a897c6078b4f739
-      internalID: -1925452049
+      spriteID: 3412d6f85b21f0743aca70d8418286c1
+      internalID: -1344935583
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_74
+      name: Warrior_SheetnoEffect_cambiado - again_74
       rect:
         serializedVersion: 2
         x: 138
         y: 176
-        width: 69
+        width: 58
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f571cabd994f524fa7766e3c8ac673a
-      internalID: -389554809
+      spriteID: 6bfdfcc8ee468294e9121fb41426226d
+      internalID: -393096713
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_75
+      name: Warrior_SheetnoEffect_cambiado - again_75
       rect:
         serializedVersion: 2
         x: 207
@@ -1693,20 +1693,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a479e603502670468527cd22d95e8b6
-      internalID: 523020645
+      spriteID: ed4623323a96196418b4c13d95b97d8e
+      internalID: -1425899399
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_76
+      name: Warrior_SheetnoEffect_cambiado - again_76
       rect:
         serializedVersion: 2
         x: 276
@@ -1714,20 +1714,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c87f459768bbda7458ad3cf505ef7736
-      internalID: 607263675
+      spriteID: 75ac26b00787366459c8d805557f00e3
+      internalID: 1281638935
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_77
+      name: Warrior_SheetnoEffect_cambiado - again_77
       rect:
         serializedVersion: 2
         x: 345
@@ -1735,20 +1735,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d19634e25bc622c4e99e4ce40186dcb5
-      internalID: 1377237322
+      spriteID: 8deaa8a4a37c21142b63d5759d9bf8f4
+      internalID: -682173551
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_78
+      name: Warrior_SheetnoEffect_cambiado - again_78
       rect:
         serializedVersion: 2
         x: 0
@@ -1756,20 +1756,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8d4c88c25a5ab04cab19ccef6171773
-      internalID: 619560759
+      spriteID: 2ca5e83049a5f01469799cfb7d486dfc
+      internalID: -144935113
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_79
+      name: Warrior_SheetnoEffect_cambiado - again_79
       rect:
         serializedVersion: 2
         x: 69
@@ -1777,20 +1777,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff9ae278d8fd75f4498e3508da83c098
-      internalID: -808907673
+      spriteID: 59fef1b47661e024d97afd97cb4208eb
+      internalID: 1967750715
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_80
+      name: Warrior_SheetnoEffect_cambiado - again_80
       rect:
         serializedVersion: 2
         x: 138
@@ -1798,20 +1798,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c0d66f078ba4c247be860cf7cd557c5
-      internalID: 1601109730
+      spriteID: c3a86a367ecf197439a1f7ea13500d12
+      internalID: 1281433341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_81
+      name: Warrior_SheetnoEffect_cambiado - again_81
       rect:
         serializedVersion: 2
         x: 207
@@ -1819,20 +1819,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0362356bc963e0344897d3df09805e29
-      internalID: -2143861624
+      spriteID: d6ba60fcb355f7544af30aa5c1549285
+      internalID: -1413957302
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_82
+      name: Warrior_SheetnoEffect_cambiado - again_82
       rect:
         serializedVersion: 2
         x: 276
@@ -1840,20 +1840,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f2502d15ed44884a8dcd1b8b8229177
-      internalID: 1572265149
+      spriteID: ad7da4e0747e7544e8692418a1487a4d
+      internalID: 1883979337
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_83
+      name: Warrior_SheetnoEffect_cambiado - again_83
       rect:
         serializedVersion: 2
         x: 345
@@ -1861,20 +1861,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b39040d751116445b1fbfe29b90f0af
-      internalID: -458617917
+      spriteID: 026a5dcf0cb6a4d4e98e565c957cba0f
+      internalID: -701541313
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_84
+      name: Warrior_SheetnoEffect_cambiado - again_84
       rect:
         serializedVersion: 2
         x: 0
@@ -1882,20 +1882,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80887cd2ade0e754e87f1035be44c1bb
-      internalID: -1025340065
+      spriteID: 1f0da5f7c44f926449b764f2ae7df754
+      internalID: 340960127
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_85
+      name: Warrior_SheetnoEffect_cambiado - again_85
       rect:
         serializedVersion: 2
         x: 69
@@ -1903,20 +1903,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f2a2550f26321b448cfca3972070bbf
-      internalID: 1850221565
+      spriteID: b60daa5a40e60524589610604e320a7d
+      internalID: -2145007866
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_86
+      name: Warrior_SheetnoEffect_cambiado - again_86
       rect:
         serializedVersion: 2
         x: 138
@@ -1924,20 +1924,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b124c22e006bcf340bfdb838f0859600
-      internalID: 713503368
+      spriteID: 41aab515cc6421542997fad72c25087b
+      internalID: -1804748112
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_87
+      name: Warrior_SheetnoEffect_cambiado - again_87
       rect:
         serializedVersion: 2
         x: 207
@@ -1945,20 +1945,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 882514ee70df6104fbd481a1b7fdfede
-      internalID: 1205856791
+      spriteID: a7c8c8162aa59284d98fb8fb8be24bb5
+      internalID: -1940517551
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_88
+      name: Warrior_SheetnoEffect_cambiado - again_88
       rect:
         serializedVersion: 2
         x: 276
@@ -1966,20 +1966,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59941798a3ca20e4582dba26cdd65627
-      internalID: -763507458
+      spriteID: 112a9c8d1b2626549b5cee331dc34ded
+      internalID: -2112176688
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_89
+      name: Warrior_SheetnoEffect_cambiado - again_89
       rect:
         serializedVersion: 2
         x: 345
@@ -1987,20 +1987,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62bf8ee8ae2168d4ebf0d5731c536775
-      internalID: -1133527613
+      spriteID: 868eefac35287de42a2360e102e4acbc
+      internalID: -535220743
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_90
+      name: Warrior_SheetnoEffect_cambiado - again_90
       rect:
         serializedVersion: 2
         x: 0
@@ -2008,20 +2008,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 066a04f8243acd94a9ca7ada349ebba1
-      internalID: 716817763
+      spriteID: 4331a945af1a6c44297ce23b830ceee0
+      internalID: -664970628
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_91
+      name: Warrior_SheetnoEffect_cambiado - again_91
       rect:
         serializedVersion: 2
         x: 69
@@ -2029,20 +2029,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd208f9ad36a4b8438b6de24f7f84bca
-      internalID: 744768666
+      spriteID: 903c0a01ef0f7bd4eb1f61f3c9d6ce50
+      internalID: 1583406049
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_92
+      name: Warrior_SheetnoEffect_cambiado - again_92
       rect:
         serializedVersion: 2
         x: 138
@@ -2050,20 +2050,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98e624379c485394eb7b92c767642be2
-      internalID: 1931068924
+      spriteID: a862cb1d49bd3aa4aaa1061229fe8517
+      internalID: 879350326
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_93
+      name: Warrior_SheetnoEffect_cambiado - again_93
       rect:
         serializedVersion: 2
         x: 207
@@ -2071,20 +2071,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c70a4c2c72de8349b26fd1f0dec69c5
-      internalID: -2088790393
+      spriteID: 83aa980f315cbd84da7568badd043550
+      internalID: -173405401
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_94
+      name: Warrior_SheetnoEffect_cambiado - again_94
       rect:
         serializedVersion: 2
         x: 276
@@ -2092,20 +2092,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95cd2dcbdc85d6a4ab369240e9abf358
-      internalID: -1979351052
+      spriteID: 7a282e21a68a6c744935f5ebe363f0fb
+      internalID: -629216757
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_95
+      name: Warrior_SheetnoEffect_cambiado - again_95
       rect:
         serializedVersion: 2
         x: 345
@@ -2113,20 +2113,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7219733a128cf9745ac6d830f13b6014
-      internalID: -192349612
+      spriteID: 6c643b7282bf8624faf30ed5d8dc7d47
+      internalID: 235673152
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_96
+      name: Warrior_SheetnoEffect_cambiado - again_96
       rect:
         serializedVersion: 2
         x: 0
@@ -2134,20 +2134,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f2dad509e9f52740b2fd142818270b8
-      internalID: 1022196860
+      spriteID: 4093d505e110afb48b215fb5fb770ada
+      internalID: 954276973
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_97
+      name: Warrior_SheetnoEffect_cambiado - again_97
       rect:
         serializedVersion: 2
         x: 69
@@ -2155,20 +2155,20 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b30b60d4bfdd5fc4289a8bcd89be7a0d
-      internalID: -605925082
+      spriteID: 6c6d06edbac69f446a6f9d0bb3f55c8b
+      internalID: -1470129376
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warrior_SheetnoEffect_cambiado_98
+      name: Warrior_SheetnoEffect_cambiado - again_98
       rect:
         serializedVersion: 2
         x: 138
@@ -2176,14 +2176,14 @@ TextureImporter:
         width: 69
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0d2eb55c15b1c54b96cab946580034e
-      internalID: 713372586
+      spriteID: 53a5f28951b5cf84fac885303f583037
+      internalID: 1789192524
       vertices: []
       indices: 
       edges: []
@@ -2199,105 +2199,105 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Warrior_SheetnoEffect_cambiado_0: 2018043659
-      Warrior_SheetnoEffect_cambiado_1: 832755537
-      Warrior_SheetnoEffect_cambiado_10: 380409369
-      Warrior_SheetnoEffect_cambiado_11: 1152638246
-      Warrior_SheetnoEffect_cambiado_12: -2121715177
-      Warrior_SheetnoEffect_cambiado_13: -1563757238
-      Warrior_SheetnoEffect_cambiado_14: -1224496750
-      Warrior_SheetnoEffect_cambiado_15: 1353027107
-      Warrior_SheetnoEffect_cambiado_16: 259026160
-      Warrior_SheetnoEffect_cambiado_17: -130293697
-      Warrior_SheetnoEffect_cambiado_18: 4330124
-      Warrior_SheetnoEffect_cambiado_19: 62426344
-      Warrior_SheetnoEffect_cambiado_2: -804081971
-      Warrior_SheetnoEffect_cambiado_20: -1933628677
-      Warrior_SheetnoEffect_cambiado_21: 1524092482
-      Warrior_SheetnoEffect_cambiado_22: -678592352
-      Warrior_SheetnoEffect_cambiado_23: -1403935744
-      Warrior_SheetnoEffect_cambiado_24: -121704255
-      Warrior_SheetnoEffect_cambiado_25: 1719867156
-      Warrior_SheetnoEffect_cambiado_26: 1030371190
-      Warrior_SheetnoEffect_cambiado_27: -1313156407
-      Warrior_SheetnoEffect_cambiado_28: -2069952569
-      Warrior_SheetnoEffect_cambiado_29: -145916584
-      Warrior_SheetnoEffect_cambiado_3: -2116002275
-      Warrior_SheetnoEffect_cambiado_30: -847576989
-      Warrior_SheetnoEffect_cambiado_31: -954858654
-      Warrior_SheetnoEffect_cambiado_32: 1943617818
-      Warrior_SheetnoEffect_cambiado_33: -142433340
-      Warrior_SheetnoEffect_cambiado_34: 745054083
-      Warrior_SheetnoEffect_cambiado_35: -219661809
-      Warrior_SheetnoEffect_cambiado_36: 950550216
-      Warrior_SheetnoEffect_cambiado_37: -439568056
-      Warrior_SheetnoEffect_cambiado_38: 71379996
-      Warrior_SheetnoEffect_cambiado_39: -2138370062
-      Warrior_SheetnoEffect_cambiado_4: -1476135344
-      Warrior_SheetnoEffect_cambiado_40: 1951278707
-      Warrior_SheetnoEffect_cambiado_41: 1823333701
-      Warrior_SheetnoEffect_cambiado_42: 792947772
-      Warrior_SheetnoEffect_cambiado_43: -1096004143
-      Warrior_SheetnoEffect_cambiado_44: 77538512
-      Warrior_SheetnoEffect_cambiado_45: -1568158669
-      Warrior_SheetnoEffect_cambiado_46: -1962960808
-      Warrior_SheetnoEffect_cambiado_47: -1746339725
-      Warrior_SheetnoEffect_cambiado_48: 2079195593
-      Warrior_SheetnoEffect_cambiado_49: -1703499222
-      Warrior_SheetnoEffect_cambiado_5: -2046003263
-      Warrior_SheetnoEffect_cambiado_50: 1085531028
-      Warrior_SheetnoEffect_cambiado_51: 1413398120
-      Warrior_SheetnoEffect_cambiado_52: -247377354
-      Warrior_SheetnoEffect_cambiado_53: 524451477
-      Warrior_SheetnoEffect_cambiado_54: -1333235678
-      Warrior_SheetnoEffect_cambiado_55: -451382652
-      Warrior_SheetnoEffect_cambiado_56: -244120708
-      Warrior_SheetnoEffect_cambiado_57: -285738193
-      Warrior_SheetnoEffect_cambiado_58: -400960922
-      Warrior_SheetnoEffect_cambiado_59: -1957676013
-      Warrior_SheetnoEffect_cambiado_6: -2010939702
-      Warrior_SheetnoEffect_cambiado_60: 1472193599
-      Warrior_SheetnoEffect_cambiado_61: -1660449342
-      Warrior_SheetnoEffect_cambiado_62: -2044307657
-      Warrior_SheetnoEffect_cambiado_63: 1323135676
-      Warrior_SheetnoEffect_cambiado_64: 209735561
-      Warrior_SheetnoEffect_cambiado_65: 2126758795
-      Warrior_SheetnoEffect_cambiado_66: -1785937801
-      Warrior_SheetnoEffect_cambiado_67: 273098585
-      Warrior_SheetnoEffect_cambiado_68: -469184529
-      Warrior_SheetnoEffect_cambiado_69: -150112124
-      Warrior_SheetnoEffect_cambiado_7: 2120740149
-      Warrior_SheetnoEffect_cambiado_70: -913514578
-      Warrior_SheetnoEffect_cambiado_71: 1029675980
-      Warrior_SheetnoEffect_cambiado_72: 738842481
-      Warrior_SheetnoEffect_cambiado_73: -1925452049
-      Warrior_SheetnoEffect_cambiado_74: -389554809
-      Warrior_SheetnoEffect_cambiado_75: 523020645
-      Warrior_SheetnoEffect_cambiado_76: 607263675
-      Warrior_SheetnoEffect_cambiado_77: 1377237322
-      Warrior_SheetnoEffect_cambiado_78: 619560759
-      Warrior_SheetnoEffect_cambiado_79: -808907673
-      Warrior_SheetnoEffect_cambiado_8: -2065316457
-      Warrior_SheetnoEffect_cambiado_80: 1601109730
-      Warrior_SheetnoEffect_cambiado_81: -2143861624
-      Warrior_SheetnoEffect_cambiado_82: 1572265149
-      Warrior_SheetnoEffect_cambiado_83: -458617917
-      Warrior_SheetnoEffect_cambiado_84: -1025340065
-      Warrior_SheetnoEffect_cambiado_85: 1850221565
-      Warrior_SheetnoEffect_cambiado_86: 713503368
-      Warrior_SheetnoEffect_cambiado_87: 1205856791
-      Warrior_SheetnoEffect_cambiado_88: -763507458
-      Warrior_SheetnoEffect_cambiado_89: -1133527613
-      Warrior_SheetnoEffect_cambiado_9: 1914675603
-      Warrior_SheetnoEffect_cambiado_90: 716817763
-      Warrior_SheetnoEffect_cambiado_91: 744768666
-      Warrior_SheetnoEffect_cambiado_92: 1931068924
-      Warrior_SheetnoEffect_cambiado_93: -2088790393
-      Warrior_SheetnoEffect_cambiado_94: -1979351052
-      Warrior_SheetnoEffect_cambiado_95: -192349612
-      Warrior_SheetnoEffect_cambiado_96: 1022196860
-      Warrior_SheetnoEffect_cambiado_97: -605925082
-      Warrior_SheetnoEffect_cambiado_98: 713372586
+      Warrior_SheetnoEffect_cambiado - again_0: 1708570064
+      Warrior_SheetnoEffect_cambiado - again_1: -1302857769
+      Warrior_SheetnoEffect_cambiado - again_10: 71465052
+      Warrior_SheetnoEffect_cambiado - again_11: -960266587
+      Warrior_SheetnoEffect_cambiado - again_12: -1705857861
+      Warrior_SheetnoEffect_cambiado - again_13: 1813119803
+      Warrior_SheetnoEffect_cambiado - again_14: -1959949994
+      Warrior_SheetnoEffect_cambiado - again_15: -386083145
+      Warrior_SheetnoEffect_cambiado - again_16: -1903162643
+      Warrior_SheetnoEffect_cambiado - again_17: 1219693649
+      Warrior_SheetnoEffect_cambiado - again_18: -423457557
+      Warrior_SheetnoEffect_cambiado - again_19: 1853303271
+      Warrior_SheetnoEffect_cambiado - again_2: 1200871901
+      Warrior_SheetnoEffect_cambiado - again_20: 143705322
+      Warrior_SheetnoEffect_cambiado - again_21: -1873224028
+      Warrior_SheetnoEffect_cambiado - again_22: -1250293844
+      Warrior_SheetnoEffect_cambiado - again_23: 1591198657
+      Warrior_SheetnoEffect_cambiado - again_24: -2028324404
+      Warrior_SheetnoEffect_cambiado - again_25: -1956891281
+      Warrior_SheetnoEffect_cambiado - again_26: -1511086725
+      Warrior_SheetnoEffect_cambiado - again_27: 1769477102
+      Warrior_SheetnoEffect_cambiado - again_28: -1599867071
+      Warrior_SheetnoEffect_cambiado - again_29: -669246718
+      Warrior_SheetnoEffect_cambiado - again_3: -1848158499
+      Warrior_SheetnoEffect_cambiado - again_30: -1328919461
+      Warrior_SheetnoEffect_cambiado - again_31: -409862072
+      Warrior_SheetnoEffect_cambiado - again_32: -718252142
+      Warrior_SheetnoEffect_cambiado - again_33: -289299232
+      Warrior_SheetnoEffect_cambiado - again_34: -1180974017
+      Warrior_SheetnoEffect_cambiado - again_35: -1923027182
+      Warrior_SheetnoEffect_cambiado - again_36: -573062963
+      Warrior_SheetnoEffect_cambiado - again_37: -2144862412
+      Warrior_SheetnoEffect_cambiado - again_38: -1626848587
+      Warrior_SheetnoEffect_cambiado - again_39: -2070511853
+      Warrior_SheetnoEffect_cambiado - again_4: -725368023
+      Warrior_SheetnoEffect_cambiado - again_40: 1442031467
+      Warrior_SheetnoEffect_cambiado - again_41: -696013501
+      Warrior_SheetnoEffect_cambiado - again_42: -559189377
+      Warrior_SheetnoEffect_cambiado - again_43: 329365860
+      Warrior_SheetnoEffect_cambiado - again_44: 1615409991
+      Warrior_SheetnoEffect_cambiado - again_45: -1596297782
+      Warrior_SheetnoEffect_cambiado - again_46: -1603565841
+      Warrior_SheetnoEffect_cambiado - again_47: 1400860943
+      Warrior_SheetnoEffect_cambiado - again_48: -803382973
+      Warrior_SheetnoEffect_cambiado - again_49: -194129411
+      Warrior_SheetnoEffect_cambiado - again_5: -536348246
+      Warrior_SheetnoEffect_cambiado - again_50: -949073208
+      Warrior_SheetnoEffect_cambiado - again_51: 447805009
+      Warrior_SheetnoEffect_cambiado - again_52: -1893951876
+      Warrior_SheetnoEffect_cambiado - again_53: -310192622
+      Warrior_SheetnoEffect_cambiado - again_54: -75848256
+      Warrior_SheetnoEffect_cambiado - again_55: -1865186338
+      Warrior_SheetnoEffect_cambiado - again_56: -535803052
+      Warrior_SheetnoEffect_cambiado - again_57: 740108930
+      Warrior_SheetnoEffect_cambiado - again_58: 1779874203
+      Warrior_SheetnoEffect_cambiado - again_59: 888532591
+      Warrior_SheetnoEffect_cambiado - again_6: -182872811
+      Warrior_SheetnoEffect_cambiado - again_60: -1903104547
+      Warrior_SheetnoEffect_cambiado - again_61: 844281273
+      Warrior_SheetnoEffect_cambiado - again_62: -1607963198
+      Warrior_SheetnoEffect_cambiado - again_63: 1107793603
+      Warrior_SheetnoEffect_cambiado - again_64: -622643497
+      Warrior_SheetnoEffect_cambiado - again_65: 1188095249
+      Warrior_SheetnoEffect_cambiado - again_66: -1400636803
+      Warrior_SheetnoEffect_cambiado - again_67: 400475830
+      Warrior_SheetnoEffect_cambiado - again_68: 1891361612
+      Warrior_SheetnoEffect_cambiado - again_69: 797194176
+      Warrior_SheetnoEffect_cambiado - again_7: -222157315
+      Warrior_SheetnoEffect_cambiado - again_70: 1890641339
+      Warrior_SheetnoEffect_cambiado - again_71: 1305838476
+      Warrior_SheetnoEffect_cambiado - again_72: -951647204
+      Warrior_SheetnoEffect_cambiado - again_73: -1344935583
+      Warrior_SheetnoEffect_cambiado - again_74: -393096713
+      Warrior_SheetnoEffect_cambiado - again_75: -1425899399
+      Warrior_SheetnoEffect_cambiado - again_76: 1281638935
+      Warrior_SheetnoEffect_cambiado - again_77: -682173551
+      Warrior_SheetnoEffect_cambiado - again_78: -144935113
+      Warrior_SheetnoEffect_cambiado - again_79: 1967750715
+      Warrior_SheetnoEffect_cambiado - again_8: 650490124
+      Warrior_SheetnoEffect_cambiado - again_80: 1281433341
+      Warrior_SheetnoEffect_cambiado - again_81: -1413957302
+      Warrior_SheetnoEffect_cambiado - again_82: 1883979337
+      Warrior_SheetnoEffect_cambiado - again_83: -701541313
+      Warrior_SheetnoEffect_cambiado - again_84: 340960127
+      Warrior_SheetnoEffect_cambiado - again_85: -2145007866
+      Warrior_SheetnoEffect_cambiado - again_86: -1804748112
+      Warrior_SheetnoEffect_cambiado - again_87: -1940517551
+      Warrior_SheetnoEffect_cambiado - again_88: -2112176688
+      Warrior_SheetnoEffect_cambiado - again_89: -535220743
+      Warrior_SheetnoEffect_cambiado - again_9: -1990601068
+      Warrior_SheetnoEffect_cambiado - again_90: -664970628
+      Warrior_SheetnoEffect_cambiado - again_91: 1583406049
+      Warrior_SheetnoEffect_cambiado - again_92: 879350326
+      Warrior_SheetnoEffect_cambiado - again_93: -173405401
+      Warrior_SheetnoEffect_cambiado - again_94: -629216757
+      Warrior_SheetnoEffect_cambiado - again_95: 235673152
+      Warrior_SheetnoEffect_cambiado - again_96: 954276973
+      Warrior_SheetnoEffect_cambiado - again_97: -1470129376
+      Warrior_SheetnoEffect_cambiado - again_98: 1789192524
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

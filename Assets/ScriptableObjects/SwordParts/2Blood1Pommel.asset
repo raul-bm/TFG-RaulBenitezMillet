@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4861b8df4348834c89fa79fca6a1a00, type: 3}
   m_Name: 2Blood1Pommel
   m_EditorClassIdentifier: 
-  partImageGameObject: {fileID: 21300000, guid: 92d8349aff140f741bb99e3bd1e62dbc, type: 3}
-  partImageIcon: {fileID: 21300000, guid: 92d8349aff140f741bb99e3bd1e62dbc, type: 3}
+  partImageGameObject: {fileID: 1002518032, guid: 989629356641fe54f8b5b5842554dd4a, type: 3}
+  partImageIcon: {fileID: 1002518032, guid: 989629356641fe54f8b5b5842554dd4a, type: 3}
   partName: Blood Pommel
   description: First part of the Blood Sword
   partType: 0

@@ -11,13 +11,21 @@ public class PlayerController : MonoBehaviour
     public CameraController cameraController;
     public PlayerStats playerStats;
 
+    public SpriteRenderer pommelSpriterRenderer;
+    public SpriteRenderer gripSpriteRenderer;
+    public SpriteRenderer crossguardSpriteRenderer;
+    public SpriteRenderer bladeSpriteRenderer;
+
     private Rigidbody2D rb;
+    private Animator animator;
 
     private Vector2 moveInput;
     private Vector2 currentVelocity;
     private bool attacking;
 
     private float timerCooldown = 0f;
+
+    private int lastHorizontalDirection = 1;
 
     // VALUES PLAYER
     public float currentHealth { get; private set; }
@@ -27,6 +35,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
 
         playerStats.InitBaseStats();
 
@@ -38,21 +47,48 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
-
-        if(attacking && timerCooldown <= currentAttackCooldown)
+        // Attack cooldown
+        if (attacking && timerCooldown <= currentAttackCooldown)
         {
             timerCooldown += Time.deltaTime;
             UI.Instance.attackCooldownImageFiller.fillAmount = timerCooldown / currentAttackCooldown;
 
-            if(timerCooldown > currentAttackCooldown)
+            if (timerCooldown > currentAttackCooldown)
             {
                 UI.Instance.attackCooldownImageFiller.fillAmount = 1f;
                 attacking = false;
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !attacking && Time.timeScale != 0f) Attack();
+        //Movimiento
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveY = Input.GetAxisRaw("Vertical");
+
+        moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+
+        // Animacion movimiento horizontal
+        if (moveX != 0)
+        {
+            lastHorizontalDirection = moveX > 0 ? 1 : -1;
+            animator.SetBool("isWalking", true);
+            animator.SetInteger("facing", lastHorizontalDirection);
+        }
+        // Animacion movimiento vertical
+        else if(moveY != 0)
+        {
+            animator.SetBool("isWalking", true);
+            animator.SetInteger("facing", lastHorizontalDirection);
+        }
+        // Animacion IDLE
+        else
+        {
+            animator.SetBool("isWalking", false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !attacking && Time.timeScale != 0f)
+        {
+            Attack();
+        }
     }
 
     private void FixedUpdate()
@@ -69,10 +105,16 @@ public class PlayerController : MonoBehaviour
 
         Vector3 direction = (mousePos - transform.position).normalized;
 
+        lastHorizontalDirection = direction.x > 0 ? 1 : -1;
+        animator.SetInteger("facing", lastHorizontalDirection);
+        animator.SetTrigger("isAttacking");
+
         attackRangeHitbox.transform.position = transform.position + direction * distanceAttackHitboxFromPlayer;
 
         float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
         attackRangeHitbox.transform.rotation = Quaternion.Euler(0f, 0f, -angle);
+
+        attackRangeHitbox.transform.localScale = new Vector3(-lastHorizontalDirection, 1, 1);
 
         attacking = true;
         UI.Instance.attackCooldownImageFiller.fillAmount = 0f;
@@ -84,6 +126,21 @@ public class PlayerController : MonoBehaviour
     public void ApplySwordParts(List<SwordPartInventory> swordParts)
     {
         playerStats.ApplySwordParts(swordParts);
+
+        pommelSpriterRenderer.sprite = null;
+        gripSpriteRenderer.sprite = null;
+        crossguardSpriteRenderer.sprite = null;
+        bladeSpriteRenderer.sprite = null;
+
+        foreach(var swordPart in swordParts)
+        {
+            Sprite spriteImage = swordPart.partScriptable.partImageGameObject;
+
+            if (swordPart.partType == TypeSwordPart.Pommel) pommelSpriterRenderer.sprite = spriteImage;
+            else if (swordPart.partType == TypeSwordPart.Grip) gripSpriteRenderer.sprite = spriteImage;
+            else if (swordPart.partType == TypeSwordPart.Crossguard) crossguardSpriteRenderer.sprite = spriteImage;
+            else if (swordPart.partType == TypeSwordPart.Blade) bladeSpriteRenderer.sprite = spriteImage;
+        }
 
         currentAttackCooldown = attackBaseCooldown / playerStats.GetStat(StatType.AttackSpeed);
 

@@ -9,17 +9,21 @@ public class EnemyBase : MonoBehaviour
 
     [Header("Enemy Settings")]
     public float chaseRange = 5f;
-    public float attackRange = 1f;
+    public float attackRange = 2f;
     public float moveSpeed = 2f;
     public float attackCooldown = 1.5f;
     public float health = 5f;
 
     protected Transform player;
-    protected float lastAttackTime;
+    protected float lastAttackTime = 0f;
+
+    protected Animator animator;
 
     protected virtual void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
+        animator = GetComponent<Animator>();
+
         currentState = EnemyState.Chase;
     }
 
@@ -37,7 +41,7 @@ public class EnemyBase : MonoBehaviour
                 break;
 
             case EnemyState.Chase:
-                if (distance < attackRange)
+                if (distance <= attackRange)
                     currentState = EnemyState.Attack;
                 else
                     MoveTowardsPlayer();
@@ -46,7 +50,7 @@ public class EnemyBase : MonoBehaviour
             case EnemyState.Attack:
                 if (distance > attackRange)
                     currentState = EnemyState.Chase;
-                else if (Time.deltaTime - lastAttackTime > attackCooldown)
+                else if (Time.time - lastAttackTime > attackCooldown)
                     Attack();
                 break;
         }
@@ -60,8 +64,8 @@ public class EnemyBase : MonoBehaviour
 
     protected virtual void Attack()
     {
+        animator.SetTrigger("IsAttacking");
         lastAttackTime = Time.time;
-        Debug.Log("Enemy attacks!");
     }
 
     public void TakeDamage(float damage)

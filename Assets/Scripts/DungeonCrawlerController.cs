@@ -47,7 +47,8 @@ public class DungeonCrawlerController : MonoBehaviour
         if(actualLevel == 6)
         {
 
-        } else
+        }
+        else
         {
             UI.Instance.LoadingScreenOn();
 
