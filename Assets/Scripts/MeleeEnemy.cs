@@ -7,6 +7,5 @@ public class MeleeEnemy : EnemyBase
     protected override void Attack()
     {
         base.Attack();
-        Debug.Log("Melee attack!");
     }
 }

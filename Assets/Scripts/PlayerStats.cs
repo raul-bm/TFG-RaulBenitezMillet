@@ -26,7 +26,7 @@ public class PlayerStats : MonoBehaviour
                 switch (stat)
                 {
                     case (StatType.Damage):
-                        currentStats[stat] = baseStats[stat] = 10;
+                        currentStats[stat] = baseStats[stat] = 2;
                         break;
 
                     case (StatType.AttackSpeed):

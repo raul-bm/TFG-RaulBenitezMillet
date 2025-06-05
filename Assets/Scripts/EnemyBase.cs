@@ -13,11 +13,16 @@ public class EnemyBase : MonoBehaviour
     public float moveSpeed = 2f;
     public float attackCooldown = 1.5f;
     public float health = 5f;
+    public float damage = 20f;
+
+    protected bool isDead = false;
 
     protected Transform player;
     protected float lastAttackTime = 0f;
 
     protected Animator animator;
+
+    protected DamageFlash damageFlash;
 
     protected virtual void Start()
     {
@@ -25,6 +30,9 @@ public class EnemyBase : MonoBehaviour
         animator = GetComponent<Animator>();
 
         currentState = EnemyState.Chase;
+
+        if(GetComponent<DamageFlash>() != null)
+            damageFlash = GetComponent<DamageFlash>();
     }
 
     protected virtual void Update()
@@ -36,6 +44,8 @@ public class EnemyBase : MonoBehaviour
         switch (currentState)
         {
             case EnemyState.Idle:
+                if (animator.GetBool("IsWalking")) animator.SetBool("IsWalking", false);
+
                 if (distance < chaseRange)
                     currentState = EnemyState.Chase;
                 break;
@@ -43,14 +53,16 @@ public class EnemyBase : MonoBehaviour
             case EnemyState.Chase:
                 if (distance <= attackRange)
                     currentState = EnemyState.Attack;
-                else
+                else if(!isDead)
                     MoveTowardsPlayer();
                 break;
 
             case EnemyState.Attack:
                 if (distance > attackRange)
                     currentState = EnemyState.Chase;
-                else if (Time.time - lastAttackTime > attackCooldown)
+                else if (player.GetComponent<PlayerController>().isDead)
+                    currentState = EnemyState.Idle;
+                else if (Time.time - lastAttackTime > attackCooldown && !isDead)
                     Attack();
                 break;
         }
@@ -58,19 +70,41 @@ public class EnemyBase : MonoBehaviour
 
     protected virtual void MoveTowardsPlayer()
     {
+        if (!animator.GetBool("IsWalking")) animator.SetBool("IsWalking", true);
+
         Vector2 dir = (player.position - transform.position).normalized;
         transform.position += (Vector3)(dir * moveSpeed * Time.deltaTime);
     }
 
     protected virtual void Attack()
     {
-        animator.SetTrigger("IsAttacking");
-        lastAttackTime = Time.time;
+        if(!player.GetComponent<PlayerController>().isDead)
+        {
+            animator.SetTrigger("IsAttacking");
+            lastAttackTime = Time.time;
+
+            player.GetComponent<PlayerController>().TakeDamage(damage);
+        }
     }
 
     public void TakeDamage(float damage)
     {
+        if (isDead) return;
+
         health -= damage;
-        if (health <= 0) Destroy(gameObject);
+
+        if (damageFlash != null)
+            damageFlash.CallDamageFlash();
+
+        if(health <= 0)
+        {
+            isDead = true;
+            animator.SetTrigger("IsDead");
+        }
+    }
+
+    public void DestroyGameObjectAfterAnimation()
+    {
+        Destroy(this.gameObject);
     }
 }

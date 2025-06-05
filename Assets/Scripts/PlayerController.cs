@@ -16,8 +16,11 @@ public class PlayerController : MonoBehaviour
     public SpriteRenderer crossguardSpriteRenderer;
     public SpriteRenderer bladeSpriteRenderer;
 
+    public bool isDead = false;
+
     private Rigidbody2D rb;
     private Animator animator;
+    private DamageFlash damageFlash;
 
     private Vector2 moveInput;
     private Vector2 currentVelocity;
@@ -29,6 +32,7 @@ public class PlayerController : MonoBehaviour
 
     // VALUES PLAYER
     public float currentHealth { get; private set; }
+    public float maxHealth { get; private set; }
     public float attackBaseCooldown { get; private set; } = 2f;
     public float currentAttackCooldown { get; private set; } = 2f;
 
@@ -36,13 +40,17 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        damageFlash = GetComponent<DamageFlash>();
 
         playerStats.InitBaseStats();
 
         currentHealth = 100f;
+        maxHealth = 100f;
         moveSpeed = 5f;
 
         attackRangeHitbox.transform.localScale = new Vector3(playerStats.GetStat(StatType.AttackRange), playerStats.GetStat(StatType.AttackRange));
+
+        UI.Instance.healthImageFiller.fillAmount = 1f;
     }
 
     private void Update()
@@ -85,7 +93,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isWalking", false);
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !attacking && Time.timeScale != 0f)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !attacking && Time.timeScale != 0f && !isDead)
         {
             Attack();
         }
@@ -93,9 +101,12 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector2 newPosition = rb.position + moveInput * moveSpeed * Time.fixedDeltaTime;
+        if(!isDead)
+        {
+            Vector2 newPosition = rb.position + moveInput * moveSpeed * Time.fixedDeltaTime;
 
-        rb.MovePosition(newPosition);
+            rb.MovePosition(newPosition);
+        }
     }
 
     private void Attack()
@@ -146,5 +157,20 @@ public class PlayerController : MonoBehaviour
 
         // Change range
         attackRangeHitbox.transform.localScale = new Vector3(playerStats.GetStat(StatType.AttackRange), playerStats.GetStat(StatType.AttackRange));
+    }
+
+    public void TakeDamage(float damage)
+    {
+        currentHealth -= damage;
+
+        UI.Instance.healthImageFiller.fillAmount = currentHealth / maxHealth;
+
+        damageFlash.CallDamageFlash();
+
+        if(currentHealth <= 0)
+        {
+            animator.Play("Player_Death");
+            isDead = true;
+        }
     }
 }
