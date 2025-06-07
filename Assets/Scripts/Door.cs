@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
+    public GameObject doorColliderNotEnter;
+
     public GameObject doorSpawnOnOtherRoom;
     public GameObject parentRoom;
 
     private void Awake()
     {
         parentRoom = this.transform.parent.gameObject;
+    }
+
+    public void UnlockDoor()
+    {
+        doorColliderNotEnter.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

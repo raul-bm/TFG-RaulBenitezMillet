@@ -6,6 +6,6 @@ public class RoomInitial : Room
 {
     public override void InitializeRoom()
     {
-        return;
+        UnlockDoors();
     }
 }

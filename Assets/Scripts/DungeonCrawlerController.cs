@@ -64,6 +64,7 @@ public class DungeonCrawlerController : MonoBehaviour
             InstanceRooms();
 
             MinimapManager.Instance.RevealRoom(Vector2Int.zero, roomPositions[Vector2Int.zero]);
+            roomPositions[Vector2Int.zero].roomGameObject.GetComponent<Room>().InitializeRoom();
         }
     }
 

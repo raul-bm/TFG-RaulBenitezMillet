@@ -55,7 +55,7 @@ public abstract class Room : MonoBehaviour
     {
         Room roomNodeRoomScript = roomNode.roomGameObject.GetComponent<Room>();
 
-        GameObject doorSpawn = roomNodeRoomScript.doors[doorRoomNodeObject].transform.GetChild(0).gameObject;
+        GameObject doorSpawn = roomNodeRoomScript.doors[doorRoomNodeObject].transform.GetChild(1).gameObject;
 
         doors[doorThisObject].GetComponent<Door>().doorSpawnOnOtherRoom = doorSpawn;
     }
@@ -71,4 +71,12 @@ public abstract class Room : MonoBehaviour
     #endregion
 
     public abstract void InitializeRoom();
+
+    public void UnlockDoors()
+    {
+        foreach(GameObject door in doors)
+        {
+            door.GetComponent<Door>().UnlockDoor();
+        }
+    }
 }

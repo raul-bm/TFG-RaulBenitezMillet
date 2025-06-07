@@ -26,5 +26,9 @@ public class RoomNormal : Room
 
             roomVisited = true;
         }
+        else
+        {
+            UnlockDoors();
+        }
     }
 }
