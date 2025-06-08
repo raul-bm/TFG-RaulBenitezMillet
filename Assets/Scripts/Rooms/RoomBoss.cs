@@ -8,6 +8,8 @@ public class RoomBoss : Room
 
     public override void InitializeRoom()
     {
+        base.InitializeRoom();
+
         if (!isCleared)
         {
             Instantiate(bossPrefab, transform.position, transform.rotation);

@@ -11,7 +11,9 @@ public class RoomReward : Room
 
     public override void InitializeRoom()
     {
-        if(!swordPartSpawned)
+        base.InitializeRoom();
+
+        if (!swordPartSpawned)
         {
             GameObject newGameObject = Instantiate(swordPartPrefab, this.transform.position, this.transform.rotation);
             newGameObject.GetComponent<SwordPartPickup>().SetSwordPart(swordPartToSpawn);
@@ -20,7 +22,7 @@ public class RoomReward : Room
             swordPartSpawned = true;
         }
 
-        UnlockDoors();
+        InitialUnlockedDoors();
     }
 
     public void SetSwordPartToSpawn()

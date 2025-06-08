@@ -100,6 +100,8 @@ public class EnemyBase : MonoBehaviour
         {
             isDead = true;
             animator.SetTrigger("IsDead");
+
+            DungeonCrawlerController.Instance.CheckRoomCleared();
         }
     }
 

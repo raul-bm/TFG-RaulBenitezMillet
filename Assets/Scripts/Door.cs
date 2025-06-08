@@ -9,14 +9,28 @@ public class Door : MonoBehaviour
     public GameObject doorSpawnOnOtherRoom;
     public GameObject parentRoom;
 
+    public Animator animator;
+
     private void Awake()
     {
         parentRoom = this.transform.parent.gameObject;
     }
 
+    public void DoorOpened()
+    {
+        animator.SetTrigger("Open");
+        doorColliderNotEnter.SetActive(false);
+    }
+
+    public void DoorClosed()
+    {
+        animator.SetTrigger("Close");
+    }
+
     public void UnlockDoor()
     {
         doorColliderNotEnter.SetActive(false);
+        animator.SetTrigger("OpenDoor");
     }
 
     private void OnTriggerEnter2D(Collider2D other)

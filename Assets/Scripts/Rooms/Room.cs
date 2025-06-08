@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public abstract class Room : MonoBehaviour
+public class Room : MonoBehaviour
 {
     public RoomNode thisRoomNode;
     public GameObject[] doors; // 0: up - 1: left - 2: down - 3: right
+
     [SerializeField] protected TextMeshPro textMPRoom;
  
     protected bool isCleared = false;
@@ -70,7 +71,26 @@ public abstract class Room : MonoBehaviour
     }
     #endregion
 
-    public abstract void InitializeRoom();
+    public virtual void InitializeRoom()
+    {
+        DungeonCrawlerController.Instance.actualRoom = this;
+    }
+
+    public void InitialLockedDoors()
+    {
+        foreach(GameObject door in doors)
+        {
+            door.GetComponent<Door>().DoorClosed();
+        }
+    }
+
+    public void InitialUnlockedDoors()
+    {
+        foreach (GameObject door in doors)
+        {
+            door.GetComponent<Door>().DoorOpened();
+        }
+    }
 
     public void UnlockDoors()
     {

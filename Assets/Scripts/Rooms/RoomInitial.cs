@@ -6,6 +6,8 @@ public class RoomInitial : Room
 {
     public override void InitializeRoom()
     {
-        UnlockDoors();
+        base.InitializeRoom();
+
+        InitialUnlockedDoors();
     }
 }

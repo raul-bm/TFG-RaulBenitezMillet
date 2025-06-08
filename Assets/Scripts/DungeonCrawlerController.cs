@@ -27,6 +27,8 @@ public class DungeonCrawlerController : MonoBehaviour
     public int enemiesToKillOnActualRoom = 0;
     public int enemiesKilled = 0;
 
+    public Room actualRoom;
+
     private void Awake()
     {
         Instance = this;
@@ -257,6 +259,16 @@ public class DungeonCrawlerController : MonoBehaviour
         {
             roomNodeDictionary.Value.roomGameObject.GetComponent<Room>().SetDoors();
             roomNodeDictionary.Value.roomGameObject.GetComponent<Room>().ChangeTextRoom();
+        }
+    }
+
+    public void CheckRoomCleared()
+    {
+        enemiesKilled++;
+
+        if(enemiesKilled == enemiesToKillOnActualRoom)
+        {
+            actualRoom.UnlockDoors();
         }
     }
 }

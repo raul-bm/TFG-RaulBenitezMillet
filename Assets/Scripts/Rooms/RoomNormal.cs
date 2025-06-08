@@ -11,9 +11,14 @@ public class RoomNormal : Room
 
     public override void InitializeRoom()
     {
-        if(!roomVisited)
+        base.InitializeRoom();
+
+        if (!roomVisited)
         {
+            InitialLockedDoors();
+
             DungeonCrawlerController.Instance.enemiesToKillOnActualRoom = thisRoomNode.enemiesCount;
+            DungeonCrawlerController.Instance.enemiesKilled = 0;
 
             System.Random random = new System.Random();
 
@@ -28,7 +33,7 @@ public class RoomNormal : Room
         }
         else
         {
-            UnlockDoors();
+            InitialUnlockedDoors();
         }
     }
 }
