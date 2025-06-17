@@ -11,6 +11,7 @@ public class DungeonCrawlerController : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject roomNormalPrefab, roomInitialPrefab, roomBossPrefab, roomRewardPrefab;
     [SerializeField] private GameObject roomsClassify;
+    [SerializeField] private GameObject swordPartsParent;
     [SerializeField] private Vector2Int distanceBetweenRooms;
     [SerializeField] private DungeonGenerationData earlyLevels, middleLevels, finalLevels, postgameLevels;
     [SerializeField] private string seed;
@@ -76,6 +77,7 @@ public class DungeonCrawlerController : MonoBehaviour
         cameraPlayer.GetComponent<CameraController>().ResetCameraLevel();
 
         for (int i = roomsClassify.transform.childCount - 1; i >= 0; i--) Destroy(roomsClassify.transform.GetChild(i).gameObject);
+        for(int i = swordPartsParent.transform.childCount - 1; i >= 0; i--) Destroy(swordPartsParent.transform.GetChild(i).gameObject);
 
         roomNodes = new List<RoomNode>();
         roomPositions = new Dictionary<Vector2Int, RoomNode>();
@@ -85,7 +87,6 @@ public class DungeonCrawlerController : MonoBehaviour
 
     private void GenerateNodeTree()
     {
-        // CHANGE IT
         if (actualLevel <= 2) actualDifficultyData = earlyLevels;
         else if (actualLevel <= 4) actualDifficultyData = middleLevels;
         else if (actualLevel <= 6) actualDifficultyData = finalLevels;

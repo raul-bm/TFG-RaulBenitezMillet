@@ -53,6 +53,8 @@ public class EnemyBase : MonoBehaviour
             case EnemyState.Chase:
                 if (distance <= attackRange)
                     currentState = EnemyState.Attack;
+                else if(distance >= chaseRange)
+                    currentState = EnemyState.Idle;
                 else if(!isDead)
                     MoveTowardsPlayer();
                 break;

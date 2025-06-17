@@ -64,10 +64,12 @@ public class Room : MonoBehaviour
     #region DEBUG
     public void ChangeTextRoom()
     {
-        if (thisRoomNode.roomType == RoomType.Initial) textMPRoom.text = "I";
+        /*if (thisRoomNode.roomType == RoomType.Initial) textMPRoom.text = "I";
         else if (thisRoomNode.roomType == RoomType.Boss) textMPRoom.text = "B";
         else if (thisRoomNode.roomType == RoomType.Reward) textMPRoom.text = "Reward";
-        else textMPRoom.text = "R" + thisRoomNode.id;
+        else textMPRoom.text = "R" + thisRoomNode.id;*/
+
+        textMPRoom.text = "(" + thisRoomNode.position.x + ", " + thisRoomNode.position.y + ")";
     }
     #endregion
 

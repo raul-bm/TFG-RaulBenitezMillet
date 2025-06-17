@@ -19,6 +19,7 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI currentStatsText;
     [SerializeField] private TextMeshProUGUI bonusSetText;
     [SerializeField] private PlayerController playerController;
+    [SerializeField] private GameObject swordPartsGameObjectParent;
     public List<GameObject> inventorySlots;
     public Dictionary<TypeSwordPart, GameObject> inventorySlotsPartsEquipped;
     public GameObject tooltipUI;
@@ -221,7 +222,7 @@ public class InventoryUI : MonoBehaviour
         Vector3 dropPosition = player.transform.position;
         dropPosition += Vector3.down * 0.5f;
 
-        GameObject newObject = Instantiate(swordPartWorld, dropPosition, Quaternion.identity);
+        GameObject newObject = Instantiate(swordPartWorld, dropPosition, Quaternion.identity, swordPartsGameObjectParent.transform);
         newObject.GetComponent<SwordPartPickup>().SetSwordPart(partScriptable);
 
         if (oldSlot.GetComponent<SlotPartEquipped>() == null) inventorySlotsOccupied.Remove(oldSlot);

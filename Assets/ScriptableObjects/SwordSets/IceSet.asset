@@ -16,6 +16,8 @@ MonoBehaviour:
   statModifiersTwoParts:
   - stat: 1
     value: 3
+  - stat: 0
+    value: -1
   statModifiersThreeParts:
   - stat: 3
     value: 2
