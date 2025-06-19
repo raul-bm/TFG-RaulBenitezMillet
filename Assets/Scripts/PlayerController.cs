@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -31,12 +32,12 @@ public class PlayerController : MonoBehaviour
     private int lastHorizontalDirection = 1;
 
     // VALUES PLAYER
-    public float currentHealth { get; private set; }
+    public float currentHealth;
     public float maxHealth { get; private set; }
     public float attackBaseCooldown { get; private set; } = 2f;
     public float currentAttackCooldown { get; private set; } = 2f;
 
-    private void Start()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -171,6 +172,15 @@ public class PlayerController : MonoBehaviour
         {
             animator.Play("Player_Death");
             isDead = true;
+
+            StartCoroutine(ReturnToMainScreen());
         }
+    }
+
+    private IEnumerator ReturnToMainScreen()
+    {
+        yield return new WaitForSeconds(2f);
+        SaveSystem.Delete();
+        SceneManager.LoadScene(0);
     }
 }

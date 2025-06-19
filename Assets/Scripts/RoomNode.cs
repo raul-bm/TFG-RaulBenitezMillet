@@ -22,6 +22,8 @@ public class RoomNode
     public RoomType roomType { get; private set; }
     public int enemiesCount { get; private set; }
 
+    public bool roomCleared { get; private set; }
+
     // Constructor for the initial node
     public RoomNode(int id)
     {
@@ -39,6 +41,8 @@ public class RoomNode
             roomType = RoomType.Initial;
         }
         else isInitial = false;
+
+        roomCleared = false;
     }
 
     // Constructor for the rest nodes
@@ -58,12 +62,35 @@ public class RoomNode
             roomType = RoomType.Initial;
         }
         else isInitial = false;
+
+        roomCleared = false;
     }
 
-    public void Connect(RoomNode descendant)
+    // Constructor with all data
+    public RoomNode(int id, int positionX, int positionY, int distance, int roomType, int enemiesCount, bool roomCleared)
     {
-        descendant.SetDistance(distance + 1);
+        this.id = id;
+        position = new Vector2Int(positionX, positionY);
+        parent = null;
+        descendants = new List<RoomNode>();
+        this.distance = distance;
+        this.roomType = (RoomType)roomType;
+
+        if (this.roomType == RoomType.Initial) isInitial = true;
+        else isInitial = false;
+
+        this.enemiesCount = enemiesCount;
+
+        this.roomCleared = roomCleared;
+    }
+
+    public void Connect(RoomNode descendant, bool isLoadingSaveData = false)
+    {
+        if(!isLoadingSaveData) descendant.SetDistance(distance + 1); 
+
         descendants.Add(descendant);
+
+        if (isLoadingSaveData) descendant.parent = this;
     }
 
     public void SetDistance(int distance)
@@ -96,5 +123,18 @@ public class RoomNode
     public void SetEnemiesCountToRoom(int count)
     {
         enemiesCount = count;
+    }
+
+    public void RoomCleared()
+    {
+        roomCleared = true;
+    }
+
+    public string GetSerializedType()
+    {
+        if (roomType == RoomType.Initial) return "I";
+        else if (roomType == RoomType.Reward) return "R";
+        else if (roomType == RoomType.Boss) return "B";
+        else return "N";
     }
 }

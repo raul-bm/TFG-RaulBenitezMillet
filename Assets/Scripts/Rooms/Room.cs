@@ -10,7 +10,7 @@ public class Room : MonoBehaviour
 
     [SerializeField] protected TextMeshPro textMPRoom;
  
-    protected bool isCleared = false;
+    public bool isCleared = false;
 
     public void SetDoors()
     {
@@ -69,7 +69,9 @@ public class Room : MonoBehaviour
         else if (thisRoomNode.roomType == RoomType.Reward) textMPRoom.text = "Reward";
         else textMPRoom.text = "R" + thisRoomNode.id;*/
 
-        textMPRoom.text = "(" + thisRoomNode.position.x + ", " + thisRoomNode.position.y + ")";
+        //textMPRoom.text = "(" + thisRoomNode.position.x + ", " + thisRoomNode.position.y + ")";
+
+        textMPRoom.text = thisRoomNode.id.ToString();
     }
     #endregion
 
@@ -96,6 +98,9 @@ public class Room : MonoBehaviour
 
     public void UnlockDoors()
     {
+        isCleared = true;
+        thisRoomNode.RoomCleared();
+
         foreach(GameObject door in doors)
         {
             door.GetComponent<Door>().UnlockDoor();

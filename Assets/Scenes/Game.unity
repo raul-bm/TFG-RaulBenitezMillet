@@ -989,7 +989,21 @@ MonoBehaviour:
   middleLevels: {fileID: 11400000, guid: 1d6a692b064b09242b135a57eb3172c4, type: 2}
   finalLevels: {fileID: 11400000, guid: 2c3957f9f4d854040aaadd3731834a3b, type: 2}
   postgameLevels: {fileID: 11400000, guid: 28846f9e84e95d949af357cc50f6ecd2, type: 2}
+  swordPartScripteablesList:
+  - set: {fileID: 11400000, guid: fc5911fbaf2b80c489a2b728edd4c182, type: 2}
+    columns:
+    - {fileID: 11400000, guid: 6bb555247e41b0042b55929ec25514b0, type: 2}
+    - {fileID: 11400000, guid: 8b79ca73c4211f5498db80634fd6c09a, type: 2}
+    - {fileID: 11400000, guid: 1ef716fd1046b924eb075a216f41c60f, type: 2}
+    - {fileID: 11400000, guid: bf4108208155a874ab3c95f62ebd2907, type: 2}
+  - set: {fileID: 11400000, guid: 1da5bc4069d7d1841925e3c780201f81, type: 2}
+    columns:
+    - {fileID: 11400000, guid: d4c72e51ab33c09409fdd19d798144b6, type: 2}
+    - {fileID: 11400000, guid: 9d6f0d96f4d8e684ab43f2c5c5d8fc53, type: 2}
+    - {fileID: 11400000, guid: fb524aa971f9c954d9918032d65ea728, type: 2}
+    - {fileID: 11400000, guid: 89792b5e7f8e7e7478a3633f76a3a646, type: 2}
   seed: asfadg
+  actualLevel: 0
   enemiesToKillOnActualRoom: 0
   enemiesKilled: 0
   actualRoom: {fileID: 0}
@@ -3043,6 +3057,7 @@ MonoBehaviour:
   crossguardSpriteRenderer: {fileID: 1287285114}
   bladeSpriteRenderer: {fileID: 1434581742}
   isDead: 0
+  currentHealth: 0
 --- !u!114 &1134031371
 MonoBehaviour:
   m_ObjectHideFlags: 0

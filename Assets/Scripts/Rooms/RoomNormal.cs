@@ -7,13 +7,11 @@ public class RoomNormal : Room
     [SerializeField] private GameObject enemyPrefab;
     [SerializeField] private GameObject[] enemySpawnPoints;
 
-    private bool roomVisited = false;
-
     public override void InitializeRoom()
     {
         base.InitializeRoom();
 
-        if (!roomVisited)
+        if (!isCleared)
         {
             InitialLockedDoors();
 
@@ -28,8 +26,6 @@ public class RoomNormal : Room
 
                 Instantiate(enemyPrefab, enemySpawnPoint.transform.position, Quaternion.identity);
             }
-
-            roomVisited = true;
         }
         else
         {

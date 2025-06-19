@@ -27,8 +27,8 @@ public class InventoryUI : MonoBehaviour
     public RectTransform inventoryArea;
 
     // First GameObject = Slot ---- Second GameObject = the added sword part
-    private Dictionary<GameObject, GameObject> inventorySlotsOccupied = new Dictionary<GameObject, GameObject>();
-    private Dictionary<GameObject, GameObject> inventorySlotsPartsEquippedOccupied = new Dictionary<GameObject, GameObject>();
+    public Dictionary<GameObject, GameObject> inventorySlotsOccupied = new Dictionary<GameObject, GameObject>();
+    public Dictionary<GameObject, GameObject> inventorySlotsPartsEquippedOccupied = new Dictionary<GameObject, GameObject>();
     public int numActualObjects = 0;
 
     public bool loadingLevel = false;
@@ -274,6 +274,18 @@ public class InventoryUI : MonoBehaviour
         }
 
         return false;
+    }
+
+    public void EquipPartSwordLoadGame(SwordPartScripteable part)
+    {
+        GameObject slot = inventorySlotsPartsEquipped[part.partType];
+
+        GameObject newObject = Instantiate(inventoryObjectPrefab, slot.transform);
+        newObject.GetComponent<SwordPartInventory>().SetData(part);
+
+        inventorySlotsPartsEquippedOccupied.Add(slot, newObject);
+
+        ApplySwordParts();
     }
 
     private void ApplySwordParts()

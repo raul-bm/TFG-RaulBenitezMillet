@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-    
-    public System.Random rng;
 
     private void Awake()
     {
@@ -19,7 +17,5 @@ public class GameManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-
-        //SceneManager.LoadScene(1);
     }
 }

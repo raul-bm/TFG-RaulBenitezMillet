@@ -8,6 +8,9 @@ public class RoomInitial : Room
     {
         base.InitializeRoom();
 
+        isCleared = true;
+        thisRoomNode.RoomCleared();
+
         InitialUnlockedDoors();
     }
 }

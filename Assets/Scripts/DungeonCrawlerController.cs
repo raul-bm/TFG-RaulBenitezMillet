@@ -8,17 +8,21 @@ public class DungeonCrawlerController : MonoBehaviour
     public static DungeonCrawlerController Instance { get; private set; }
 
     [SerializeField] private GameObject cameraPlayer;
-    [SerializeField] private GameObject player;
+    public GameObject player;
     [SerializeField] private GameObject roomNormalPrefab, roomInitialPrefab, roomBossPrefab, roomRewardPrefab;
     [SerializeField] private GameObject roomsClassify;
     [SerializeField] private GameObject swordPartsParent;
     [SerializeField] private Vector2Int distanceBetweenRooms;
     [SerializeField] private DungeonGenerationData earlyLevels, middleLevels, finalLevels, postgameLevels;
-    [SerializeField] private string seed;
 
-    private List<RoomNode> roomNodes;
+    // 0,0 -> Set Hielo Pomo  0,1 -> Set Hielo Grip    etc
+    public List<RowContainer> swordPartScripteablesList; 
+        
+    public string seed;
+
+    public List<RoomNode> roomNodes;
     private Dictionary<Vector2Int, RoomNode> roomPositions;
-    private int actualLevel;
+    public int actualLevel;
     public DungeonGenerationData actualDifficultyData { get; private set; }
 
     private RoomNode farthestRoomNode;
@@ -37,11 +41,22 @@ public class DungeonCrawlerController : MonoBehaviour
 
     void Start()
     {
-        actualLevel = 0;
+        if(PlayerPrefs.GetInt("gameSaved") == 0)
+        {
+            actualLevel = 0;
 
-        GameManager.Instance.rng = new System.Random(seed.GetHashCode());
+            seed = PlayerPrefs.GetString("gameSeed");
 
-        ProceduralGeneration();
+            Random.InitState(seed.GetHashCode());
+
+            ProceduralGeneration();
+        }
+        else
+        {
+            GameData saveData = SaveSystem.Load();
+
+            LoadFromSaveData(saveData);
+        }
     }
 
     public void ProceduralGeneration()
@@ -60,7 +75,7 @@ public class DungeonCrawlerController : MonoBehaviour
             actualLevel++;
 
             GenerateNodeTree();
-            //ShowNodeTree();
+            ShowNodeTree();
             SaveRoomPositions();
             ChangeRoomType();
             SetEnemiesCountInEachRoom();
@@ -102,7 +117,7 @@ public class DungeonCrawlerController : MonoBehaviour
 
         farthestRoomNode = initialNode;
 
-        int quantityRooms = GameManager.Instance.rng.Next(actualDifficultyData.minRooms, actualDifficultyData.maxRooms);
+        int quantityRooms = Random.Range(actualDifficultyData.minRooms, actualDifficultyData.maxRooms);
 
         for(int i = roomNodes.Count; i <= quantityRooms; i++)
         {
@@ -110,7 +125,7 @@ public class DungeonCrawlerController : MonoBehaviour
 
             do
             {
-                parentNode = roomNodes[GameManager.Instance.rng.Next(roomNodes.Count)];
+                parentNode = roomNodes[Random.Range(0, roomNodes.Count)];
             } while (!parentNode.CanConnectMoreRooms());
 
             RoomNode newRoom = new RoomNode(roomId++, parentNode);
@@ -173,7 +188,7 @@ public class DungeonCrawlerController : MonoBehaviour
 
             do
             {
-                directionGood = directionsForCheck[GameManager.Instance.rng.Next(directionsForCheck.Count)];
+                directionGood = directionsForCheck[Random.Range(0, directionsForCheck.Count)];
                 directionsForCheck.Remove(directionGood);
 
                 //Debug.Log("Count: " + directionsForCheck.Count + " - ID: " + actualRoomNode.id + " - Descendant: " + descendant.id);
@@ -218,7 +233,7 @@ public class DungeonCrawlerController : MonoBehaviour
         {
             RoomNode actualNodeWhile = roomNodes[0];
 
-            while(actualNodeWhile.roomType != RoomType.Normal) actualNodeWhile = roomNodes[GameManager.Instance.rng.Next(roomNodes.Count)];
+            while(actualNodeWhile.roomType != RoomType.Normal) actualNodeWhile = roomNodes[Random.Range(0, roomNodes.Count)];
 
             actualNodeWhile.SetRoomType(RoomType.Reward);
         }
@@ -229,7 +244,7 @@ public class DungeonCrawlerController : MonoBehaviour
         foreach(var roomNode in roomNodes)
         {
             if(roomNode.roomType == RoomType.Normal)
-                roomNode.SetEnemiesCountToRoom(GameManager.Instance.rng.Next(actualDifficultyData.enemiesPerRoomMin, actualDifficultyData.enemiesPerRoomMax + 1));
+                roomNode.SetEnemiesCountToRoom(Random.Range(actualDifficultyData.enemiesPerRoomMin, actualDifficultyData.enemiesPerRoomMax + 1));
         }
     }
 
@@ -271,5 +286,91 @@ public class DungeonCrawlerController : MonoBehaviour
         {
             actualRoom.UnlockDoors();
         }
+    }
+
+    private void LoadFromSaveData(GameData saveData)
+    {
+        UI.Instance.LoadingScreenOn();
+
+        actualLevel = saveData.actualLevel;
+
+        if (actualLevel <= 2) actualDifficultyData = earlyLevels;
+        else if (actualLevel <= 4) actualDifficultyData = middleLevels;
+        else if (actualLevel <= 6) actualDifficultyData = finalLevels;
+        else actualDifficultyData = postgameLevels;
+
+        roomNodes = new List<RoomNode>();
+        roomPositions = new Dictionary<Vector2Int, RoomNode>();
+
+        foreach(var graphNode in saveData.graphNodes)
+        {
+            RoomNode roomNode = new RoomNode(graphNode.nodeId, graphNode.positionX, graphNode.positionY, graphNode.distance, graphNode.roomType, graphNode.enemiesCount, graphNode.roomCleared);
+
+            roomNodes.Add(roomNode);
+
+            roomPositions.Add(roomNode.position, roomNode);
+        }
+
+        foreach(var graphNodeDescendants in saveData.graphNodesDescendants)
+        {
+            int nodeParentId = graphNodeDescendants.nodeParentId;
+
+            foreach(var descendantId in graphNodeDescendants.descendants)
+            {
+                roomNodes[nodeParentId].Connect(roomNodes[descendantId], true);
+            }
+        }
+
+        InstanceRooms();
+
+        // Set clear rooms
+        foreach(var roomNode in roomNodes)
+        {
+            roomNode.roomGameObject.GetComponent<Room>().isCleared = roomNode.roomCleared;
+        }
+
+        actualRoom = roomNodes[saveData.actualRoom].roomGameObject.GetComponent<Room>();
+
+        actualRoom.InitializeRoom();
+
+        cameraPlayer.GetComponent<CameraController>().ChangeCameraPosition(roomNodes[saveData.actualRoom].roomGameObject);
+
+        player.transform.position = roomNodes[saveData.actualRoom].roomGameObject.transform.position;
+
+        player.GetComponent<PlayerController>().currentHealth = saveData.playerHealth;
+
+        foreach(var inventoryObject in saveData.inventoryObjects)
+        {
+            SwordPartScripteable partScripteable = swordPartScripteablesList[inventoryObject.setNumber].columns[inventoryObject.partNumber];
+
+            InventoryUI.Instance.AddObject(partScripteable);
+        }
+
+        // Partes equipadas
+        foreach(var equippedObject in saveData.equippedObjects)
+        {
+            SwordPartScripteable partScripteable = swordPartScripteablesList[equippedObject.setNumber].columns[equippedObject.partNumber];
+
+            InventoryUI.Instance.EquipPartSwordLoadGame(partScripteable);
+        }
+
+        seed = saveData.seed;
+        Random.state = JsonUtility.FromJson<Random.State>(saveData.randomState);
+
+        // Minimap reveal
+        foreach(var roomNode in roomNodes)
+        {
+            if(roomNode.roomCleared)
+                MinimapManager.Instance.RevealRoom(roomNode.position, roomNode);
+        }
+
+        MinimapManager.Instance.RevealRoom(actualRoom.thisRoomNode.position, actualRoom.thisRoomNode);
+
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            SaveSystem.Save();
     }
 }

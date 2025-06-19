@@ -7,19 +7,19 @@ public class RoomReward : Room
     [SerializeField] private GameObject swordPartPrefab;
 
     private SwordPartScripteable swordPartToSpawn;
-    private bool swordPartSpawned = false;
 
     public override void InitializeRoom()
     {
         base.InitializeRoom();
 
-        if (!swordPartSpawned)
+        if (!isCleared)
         {
             GameObject newGameObject = Instantiate(swordPartPrefab, this.transform.position, this.transform.rotation);
             newGameObject.GetComponent<SwordPartPickup>().SetSwordPart(swordPartToSpawn);
             newGameObject.transform.parent = this.transform;
 
-            swordPartSpawned = true;
+            isCleared = true;
+            thisRoomNode.RoomCleared();
         }
 
         InitialUnlockedDoors();
@@ -29,6 +29,6 @@ public class RoomReward : Room
     {
         List<SwordPartScripteable> poolObjectsRewardRoom = DungeonCrawlerController.Instance.actualDifficultyData.poolObjectsRewardRoom;
 
-        swordPartToSpawn = poolObjectsRewardRoom[GameManager.Instance.rng.Next(poolObjectsRewardRoom.Count)];
+        swordPartToSpawn = poolObjectsRewardRoom[Random.Range(0, poolObjectsRewardRoom.Count)];
     }
 }
