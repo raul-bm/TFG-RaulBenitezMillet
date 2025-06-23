@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class EnemyBase : MonoBehaviour
 {
-    public enum EnemyState { Idle, Chase, Attack}
-    protected EnemyState currentState = EnemyState.Idle;
-
     [Header("Enemy Settings")]
     public float chaseRange = 5f;
     public float attackRange = 2f;
@@ -17,7 +14,7 @@ public class EnemyBase : MonoBehaviour
 
     protected bool isDead = false;
 
-    protected Transform player;
+    protected GameObject player;
     protected float lastAttackTime = 0f;
 
     protected Animator animator;
@@ -26,10 +23,8 @@ public class EnemyBase : MonoBehaviour
 
     protected virtual void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player")?.transform;
+        player = GameObject.FindGameObjectWithTag("Player");
         animator = GetComponent<Animator>();
-
-        currentState = EnemyState.Chase;
 
         if(GetComponent<DamageFlash>() != null)
             damageFlash = GetComponent<DamageFlash>();
@@ -38,55 +33,6 @@ public class EnemyBase : MonoBehaviour
     protected virtual void Update()
     {
         if (player == null) return;
-
-        float distance = Vector2.Distance(transform.position, player.position);
-
-        switch (currentState)
-        {
-            case EnemyState.Idle:
-                if (animator.GetBool("IsWalking")) animator.SetBool("IsWalking", false);
-
-                if (distance < chaseRange)
-                    currentState = EnemyState.Chase;
-                break;
-
-            case EnemyState.Chase:
-                if (distance <= attackRange)
-                    currentState = EnemyState.Attack;
-                else if(distance >= chaseRange)
-                    currentState = EnemyState.Idle;
-                else if(!isDead)
-                    MoveTowardsPlayer();
-                break;
-
-            case EnemyState.Attack:
-                if (distance > attackRange)
-                    currentState = EnemyState.Chase;
-                else if (player.GetComponent<PlayerController>().isDead)
-                    currentState = EnemyState.Idle;
-                else if (Time.time - lastAttackTime > attackCooldown && !isDead)
-                    Attack();
-                break;
-        }
-    }
-
-    protected virtual void MoveTowardsPlayer()
-    {
-        if (!animator.GetBool("IsWalking")) animator.SetBool("IsWalking", true);
-
-        Vector2 dir = (player.position - transform.position).normalized;
-        transform.position += (Vector3)(dir * moveSpeed * Time.deltaTime);
-    }
-
-    protected virtual void Attack()
-    {
-        if(!player.GetComponent<PlayerController>().isDead)
-        {
-            animator.SetTrigger("IsAttacking");
-            lastAttackTime = Time.time;
-
-            player.GetComponent<PlayerController>().TakeDamage(damage);
-        }
     }
 
     public void TakeDamage(float damage)

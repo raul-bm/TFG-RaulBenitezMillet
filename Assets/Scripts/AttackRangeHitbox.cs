@@ -25,7 +25,7 @@ public class AttackRangeHitbox : MonoBehaviour
         }
         else if(other.gameObject.tag == "Boss")
         {
-            other.gameObject.GetComponent<Boss>().TakeDamageBoss(playerScript.playerStats.GetStat(StatType.Damage));
+            other.gameObject.GetComponent<EnemyBase>().TakeDamage(playerScript.playerStats.GetStat(StatType.Damage));
         }
     }
 }

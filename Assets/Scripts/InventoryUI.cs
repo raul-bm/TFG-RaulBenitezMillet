@@ -345,6 +345,14 @@ public class InventoryUI : MonoBehaviour
             case (SetOfSword.Blood):
                 hexColor = "#8a0303";
                 break;
+
+            case (SetOfSword.Light):
+                hexColor = "#b2b2b2";
+                break;
+
+            case (SetOfSword.Dark):
+                hexColor = "#842ec4";
+                break;
         }
 
         return hexColor;

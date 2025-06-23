@@ -126,7 +126,9 @@ public class PlayerController : MonoBehaviour
         float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
         attackRangeHitbox.transform.rotation = Quaternion.Euler(0f, 0f, -angle);
 
-        attackRangeHitbox.transform.localScale = new Vector3(-lastHorizontalDirection, 1, 1);
+        Vector3 hitboxScale = new Vector3(-lastHorizontalDirection * Mathf.Abs(attackRangeHitbox.transform.localScale.x), attackRangeHitbox.transform.localScale.y, attackRangeHitbox.transform.localScale.z);
+
+        attackRangeHitbox.transform.localScale = hitboxScale;
 
         attacking = true;
         UI.Instance.attackCooldownImageFiller.fillAmount = 0f;
@@ -155,6 +157,8 @@ public class PlayerController : MonoBehaviour
         }
 
         currentAttackCooldown = attackBaseCooldown / playerStats.GetStat(StatType.AttackSpeed);
+        
+        if(attacking) timerCooldown = 0f;
 
         // Change range
         attackRangeHitbox.transform.localScale = new Vector3(playerStats.GetStat(StatType.AttackRange), playerStats.GetStat(StatType.AttackRange));

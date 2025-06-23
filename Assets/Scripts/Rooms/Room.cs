@@ -96,7 +96,7 @@ public class Room : MonoBehaviour
         }
     }
 
-    public void UnlockDoors()
+    public virtual void UnlockDoors()
     {
         isCleared = true;
         thisRoomNode.RoomCleared();
@@ -105,5 +105,7 @@ public class Room : MonoBehaviour
         {
             door.GetComponent<Door>().UnlockDoor();
         }
+
+        Debug.Log("b");
     }
 }

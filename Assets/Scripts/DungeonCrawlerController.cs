@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.VersionControl;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DungeonCrawlerController : MonoBehaviour
 {
@@ -49,6 +50,20 @@ public class DungeonCrawlerController : MonoBehaviour
 
             Random.InitState(seed.GetHashCode());
 
+            string[] unlockedItems = PlayerPrefs.GetString("unlockedItems").Split('-');
+
+            foreach (var unlockedItem in unlockedItems)
+            {
+                if (unlockedItem != "")
+                {
+                    string[] infoUnlockedItem = unlockedItem.Split(' ');
+                    int setNumber = int.Parse(infoUnlockedItem[0]);
+                    int partNumber = int.Parse(infoUnlockedItem[1]);
+
+                    InventoryUI.Instance.AddObject(swordPartScripteablesList[setNumber].columns[partNumber]);
+                }
+            }
+
             ProceduralGeneration();
         }
         else
@@ -64,7 +79,7 @@ public class DungeonCrawlerController : MonoBehaviour
         // Last level
         if(actualLevel == 6)
         {
-
+            SceneManager.LoadScene(0);
         }
         else
         {
@@ -75,7 +90,7 @@ public class DungeonCrawlerController : MonoBehaviour
             actualLevel++;
 
             GenerateNodeTree();
-            ShowNodeTree();
+            //ShowNodeTree();
             SaveRoomPositions();
             ChangeRoomType();
             SetEnemiesCountInEachRoom();

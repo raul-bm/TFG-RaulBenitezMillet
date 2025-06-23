@@ -1002,6 +1002,18 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 9d6f0d96f4d8e684ab43f2c5c5d8fc53, type: 2}
     - {fileID: 11400000, guid: fb524aa971f9c954d9918032d65ea728, type: 2}
     - {fileID: 11400000, guid: 89792b5e7f8e7e7478a3633f76a3a646, type: 2}
+  - set: {fileID: 11400000, guid: 74fdfd60e2cef3f46a1a44bd5e827653, type: 2}
+    columns:
+    - {fileID: 11400000, guid: 2eaa97b73d1f3ef44bee5f8fb2b5082b, type: 2}
+    - {fileID: 11400000, guid: 31b8d992b91997a43a9b6b1e073d75a1, type: 2}
+    - {fileID: 11400000, guid: 53fe327dc8c6d9d469d59c44cecefc95, type: 2}
+    - {fileID: 11400000, guid: 299dcda1ec0382f4a91f76c33365a999, type: 2}
+  - set: {fileID: 11400000, guid: 91453836742732c489a1e28023f4fd9a, type: 2}
+    columns:
+    - {fileID: 11400000, guid: bfef6e8b5664137418df0462b9502e76, type: 2}
+    - {fileID: 11400000, guid: ff3601ce5f632604b87934560a2767de, type: 2}
+    - {fileID: 11400000, guid: ebdf93dabc2fa064293cf21c2ae1f549, type: 2}
+    - {fileID: 11400000, guid: dd1466b8b6267ea41ba260407019013b, type: 2}
   seed: asfadg
   actualLevel: 0
   enemiesToKillOnActualRoom: 0
@@ -2887,6 +2899,7 @@ GameObject:
   - component: {fileID: 1134031371}
   - component: {fileID: 1134031372}
   - component: {fileID: 1134031373}
+  - component: {fileID: 1134031374}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3108,6 +3121,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _flashColor: {r: 1, g: 0, b: 0, a: 1}
   flashTime: 0.5
+--- !u!61 &1134031374
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134031365}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.10435575, y: -0.21644169}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.9, y: 2.2}
+    newSize: {x: 3.45, y: 2.2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0061346, y: 1.7361962}
+  m_EdgeRadius: 0
 --- !u!1 &1150525971
 GameObject:
   m_ObjectHideFlags: 0

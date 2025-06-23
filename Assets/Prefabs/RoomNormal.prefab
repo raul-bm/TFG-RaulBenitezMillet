@@ -2291,7 +2291,7 @@ GameObject:
   - component: {fileID: 6401244811039922655}
   m_Layer: 0
   m_Name: Down1
-  m_TagString: Untagged
+  m_TagString: RoomColliders
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2421,7 +2421,7 @@ GameObject:
   - component: {fileID: 3188320544510275034}
   m_Layer: 0
   m_Name: Right1
-  m_TagString: Untagged
+  m_TagString: RoomColliders
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2551,7 +2551,7 @@ GameObject:
   - component: {fileID: 3085742816054947669}
   m_Layer: 0
   m_Name: Up2
-  m_TagString: Untagged
+  m_TagString: RoomColliders
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2681,7 +2681,7 @@ GameObject:
   - component: {fileID: 4932650006945513961}
   m_Layer: 0
   m_Name: Down2
-  m_TagString: Untagged
+  m_TagString: RoomColliders
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2887,7 +2887,7 @@ GameObject:
   - component: {fileID: 7323324148362280512}
   m_Layer: 0
   m_Name: Left1
-  m_TagString: Untagged
+  m_TagString: RoomColliders
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3017,7 +3017,7 @@ GameObject:
   - component: {fileID: 6456340363141577367}
   m_Layer: 0
   m_Name: Right2
-  m_TagString: Untagged
+  m_TagString: RoomColliders
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3147,7 +3147,7 @@ GameObject:
   - component: {fileID: 868105288282107887}
   m_Layer: 0
   m_Name: Left2
-  m_TagString: Untagged
+  m_TagString: RoomColliders
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3353,9 +3353,8 @@ MonoBehaviour:
   - {fileID: 4728554533708806771}
   - {fileID: 1843270751708576126}
   - {fileID: 7713881981506093828}
-  doorLocked: {fileID: 21300000, guid: 181a9a341918d9b4b9f6bcf3ab9f8e47, type: 3}
-  doorUnlocked: {fileID: 21300000, guid: c20f2edd2d5c77c4a83fb6f78dc409ec, type: 3}
   textMPRoom: {fileID: 1322926706102518832}
+  isCleared: 0
   enemyPrefab: {fileID: 6681832015799256664, guid: 265418ff539a1954f873deb0aca9a3d3, type: 3}
   enemySpawnPoints:
   - {fileID: 5672068295900669886}
@@ -3469,7 +3468,7 @@ GameObject:
   - component: {fileID: 7110412636932741059}
   m_Layer: 0
   m_Name: Up1
-  m_TagString: Untagged
+  m_TagString: RoomColliders
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

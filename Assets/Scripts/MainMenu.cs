@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,8 +15,15 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject continueButton;
     [SerializeField] private GameObject deleteRunButton;
 
+    [SerializeField] private GameObject mainMenu;
+    [SerializeField] private GameObject shopMenu;
+
+    [SerializeField] private ShopMenu shopScript;
+
     private void Start()
     {
+        ShowMainMenu();
+
         if(SaveSystem.IsThereAnySaveData())
         {
             newRunButton.SetActive(false);
@@ -29,6 +37,14 @@ public class MainMenu : MonoBehaviour
             seedInput.SetActive(true);
             continueButton.SetActive(false);
             deleteRunButton.SetActive(false);
+        }
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Keypad2))
+        {
+            PlayerPrefs.SetInt("moneyPlayer", 500);
         }
     }
 
@@ -69,5 +85,27 @@ public class MainMenu : MonoBehaviour
         }
 
         return new string(seed);
+    }
+
+    public void ShowShopMenu()
+    {
+        mainMenu.SetActive(false);
+        shopMenu.SetActive(true);
+
+        shopScript.InitializeShopMenu();
+    }
+
+    public void ShowMainMenu()
+    {
+        mainMenu.SetActive(true);
+        shopMenu.SetActive(false);
+    }
+
+    public void DeleteAllButton()
+    {
+        PlayerPrefs.DeleteKey("moneyPlayer");
+        PlayerPrefs.DeleteKey("unlockedItems");
+
+        DeleteButton();
     }
 }

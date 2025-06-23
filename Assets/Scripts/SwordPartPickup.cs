@@ -14,6 +14,8 @@ public enum SetOfSword
 {
     Ice,
     Blood,
+    Light,
+    Dark,
 }
 
 public class SwordPartPickup : MonoBehaviour

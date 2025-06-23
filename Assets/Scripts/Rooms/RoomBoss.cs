@@ -13,6 +13,16 @@ public class RoomBoss : Room
         if (!isCleared)
         {
             Instantiate(bossPrefab, transform.position, transform.rotation);
+
+            DungeonCrawlerController.Instance.enemiesToKillOnActualRoom = 1;
+            DungeonCrawlerController.Instance.enemiesKilled = 0;
         }
+    }
+
+    public override void UnlockDoors()
+    {
+        base.UnlockDoors();
+
+        DungeonCrawlerController.Instance.ProceduralGeneration();
     }
 }
