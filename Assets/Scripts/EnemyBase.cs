@@ -11,6 +11,7 @@ public class EnemyBase : MonoBehaviour
     public float attackCooldown = 1.5f;
     public float health = 5f;
     public float damage = 20f;
+    public int moneyGivenToPlayerWhenKilled;
 
     protected bool isDead = false;
 
@@ -48,6 +49,10 @@ public class EnemyBase : MonoBehaviour
         {
             isDead = true;
             animator.SetTrigger("IsDead");
+
+            int moneyPlayer = PlayerPrefs.GetInt("moneyPlayer");
+            moneyPlayer += moneyGivenToPlayerWhenKilled;
+            PlayerPrefs.SetInt("moneyPlayer", moneyPlayer);
 
             DungeonCrawlerController.Instance.CheckRoomCleared();
         }

@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -296,6 +294,10 @@ public class DungeonCrawlerController : MonoBehaviour
     public void CheckRoomCleared()
     {
         enemiesKilled++;
+
+        Debug.Log("Enemies killed: " + enemiesKilled);
+        Debug.Log("Enemies to kill: " + enemiesToKillOnActualRoom);
+        Debug.Log("ID room: " + actualRoom.GetComponent<Room>().thisRoomNode.id);
 
         if(enemiesKilled == enemiesToKillOnActualRoom)
         {

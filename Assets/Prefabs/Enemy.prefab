@@ -178,6 +178,8 @@ MonoBehaviour:
   moveSpeed: 2
   attackCooldown: 2.5
   health: 5
+  damage: 20
+  moneyGivenToPlayerWhenKilled: 2
 --- !u!95 &7088113755255687182
 Animator:
   serializedVersion: 5

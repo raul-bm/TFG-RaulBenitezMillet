@@ -17,6 +17,7 @@ public class MainMenu : MonoBehaviour
 
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject shopMenu;
+    [SerializeField] private GameObject controlsMenu;
 
     [SerializeField] private ShopMenu shopScript;
 
@@ -91,6 +92,7 @@ public class MainMenu : MonoBehaviour
     {
         mainMenu.SetActive(false);
         shopMenu.SetActive(true);
+        controlsMenu.SetActive(false);
 
         shopScript.InitializeShopMenu();
     }
@@ -99,6 +101,14 @@ public class MainMenu : MonoBehaviour
     {
         mainMenu.SetActive(true);
         shopMenu.SetActive(false);
+        controlsMenu.SetActive(false);
+    }
+
+    public void ShowControlsMenu()
+    {
+        mainMenu.SetActive(false);
+        shopMenu.SetActive(false);
+        controlsMenu.SetActive(true);
     }
 
     public void DeleteAllButton()
@@ -107,5 +117,10 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.DeleteKey("unlockedItems");
 
         DeleteButton();
+    }
+
+    public void QuitGameButton()
+    {
+        Application.Quit();
     }
 }

@@ -268,6 +268,7 @@ MonoBehaviour:
   attackCooldown: 1.5
   health: 50
   damage: 20
+  moneyGivenToPlayerWhenKilled: 10
   pointerToPlayer: {fileID: 3557159415171357014}
   attackGameobjects:
   - {fileID: 5172167507415523024}
