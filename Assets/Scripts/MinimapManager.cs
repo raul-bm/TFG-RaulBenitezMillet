@@ -17,6 +17,11 @@ public class MinimapManager : MonoBehaviour
     public float movingSpeedHorizontal = 0.3f;
     public float movingSpeedVertical = 0.2f;
 
+    // [0] - visited // [1] - showed
+    public List<Color> normalColors = new List<Color>() { new Color(1f, 1f, 1f, 0.7f), new Color(0.7f, 0.7f, 0.7f, 0.7f) };
+    public List<Color> rewardColors = new List<Color>();
+    public List<Color> bossColors = new List<Color>();
+
     private Dictionary<Vector2Int, GameObject> roomsShowed = new Dictionary<Vector2Int, GameObject>();
     private List<Vector2Int> roomsVisited = new List<Vector2Int>();
 
@@ -31,28 +36,58 @@ public class MinimapManager : MonoBehaviour
     {
         if(!roomsVisited.Contains(playerRoomPos))
         {
+            List<Color> thisColors = new List<Color>();
+
+            switch (roomActualNode.roomType)
+            {
+                case RoomType.Reward:
+                    thisColors = rewardColors;
+                    break;
+                case RoomType.Boss:
+                    thisColors = bossColors;
+                    break;
+                default:
+                    thisColors = normalColors;
+                    break;
+            }
+
             // Room icon instantiate
-            if(!roomsShowed.ContainsKey(playerRoomPos))
+            if (!roomsShowed.ContainsKey(playerRoomPos))
             {
                 GameObject roomIconInstance = Instantiate(roomIconPrefab, minimapContent);
                 roomIconInstance.transform.localPosition = new Vector3(playerRoomPos.x * spacingHorizontal, playerRoomPos.y * spacingVertical);
-                roomIconInstance.GetComponent<Image>().color = new Color(1f, 1f, 1f, 0.7f);
+                roomIconInstance.GetComponent<Image>().color = thisColors[0];
                 roomsShowed.Add(playerRoomPos, roomIconInstance);
                 roomsVisited.Add(playerRoomPos);
             }
             else
             {
-                roomsShowed[playerRoomPos].GetComponent<Image>().color = new Color(1f, 1f, 1f, 0.7f);
+                roomsShowed[playerRoomPos].GetComponent<Image>().color = thisColors[0];
                 roomsVisited.Add(playerRoomPos);
             }
             
             foreach(RoomNode roomDescendantNode in roomActualNode.descendants)
             {
+                List<Color> descendantColors = new List<Color>();
+
+                switch (roomDescendantNode.roomType)
+                {
+                    case RoomType.Reward:
+                        descendantColors = rewardColors;
+                        break;
+                    case RoomType.Boss:
+                        descendantColors = bossColors;
+                        break;
+                    default:
+                        descendantColors = normalColors;
+                        break;
+                }
+
                 if (!roomsShowed.ContainsKey(roomDescendantNode.position))
                 {
                     GameObject roomOtherIconInstance = Instantiate(roomIconPrefab, minimapContent);
                     roomOtherIconInstance.transform.localPosition = new Vector3(roomDescendantNode.position.x * spacingHorizontal, roomDescendantNode.position.y * spacingVertical);
-                    roomOtherIconInstance.GetComponent<Image>().color = new Color(0.7f, 0.7f, 0.7f, 0.7f);
+                    roomOtherIconInstance.GetComponent<Image>().color = descendantColors[1];
                     roomsShowed.Add(roomDescendantNode.position, roomOtherIconInstance);
                 }
             }

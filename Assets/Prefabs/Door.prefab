@@ -181,6 +181,7 @@ MonoBehaviour:
   doorSpawnOnOtherRoom: {fileID: 0}
   parentRoom: {fileID: 0}
   animator: {fileID: 7477215326086016636}
+  spriteRenderer: {fileID: 3176665168852654478}
 --- !u!61 &1475848344411939543
 BoxCollider2D:
   m_ObjectHideFlags: 0

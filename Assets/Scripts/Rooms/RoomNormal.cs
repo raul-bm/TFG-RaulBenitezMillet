@@ -5,31 +5,46 @@ using UnityEngine;
 public class RoomNormal : Room
 {
     [SerializeField] private GameObject enemyPrefab;
-    [SerializeField] private GameObject[] enemySpawnPoints;
+    [SerializeField] private List<GameObject> enemySpawnPoints;
 
     public override void InitializeRoom()
     {
+        //Debug.Log("Ejecutado");
+
         base.InitializeRoom();
 
-        if (!isCleared)
+        if(!isInitialized)
         {
-            InitialLockedDoors();
+            isInitialized = true;
 
-            DungeonCrawlerController.Instance.enemiesToKillOnActualRoom = thisRoomNode.enemiesCount;
-            DungeonCrawlerController.Instance.enemiesKilled = 0;
-
-            System.Random random = new System.Random();
-
-            for (int i = 0; i < thisRoomNode.enemiesCount; i++)
+            if (!isCleared)
             {
-                GameObject enemySpawnPoint = enemySpawnPoints[random.Next(enemySpawnPoints.Length)];
+                InitialLockedDoors();
 
-                Instantiate(enemyPrefab, enemySpawnPoint.transform.position, Quaternion.identity);
+                DungeonCrawlerController.Instance.enemiesToKillOnActualRoom = thisRoomNode.enemiesCount;
+                DungeonCrawlerController.Instance.enemiesKilled = 0;
+
+                System.Random random = new System.Random();
+
+                //Debug.Log("AAAA: " + thisRoomNode.enemiesCount);
+
+                for (int i = 0; i < thisRoomNode.enemiesCount; i++)
+                {
+                    //Debug.Log("Contador " + i);
+                    //Debug.Log(enemySpawnPoints.Count);
+                    int numEnemySpawnPoint = random.Next(enemySpawnPoints.Count);
+
+                    GameObject enemySpawnPoint = enemySpawnPoints[numEnemySpawnPoint];
+
+                    Instantiate(enemyPrefab, enemySpawnPoint.transform.position, Quaternion.identity);
+
+                    enemySpawnPoints.RemoveAt(numEnemySpawnPoint);
+                }
             }
-        }
-        else
-        {
-            InitialUnlockedDoors();
+            else
+            {
+                InitialUnlockedDoors();
+            }
         }
     }
 }

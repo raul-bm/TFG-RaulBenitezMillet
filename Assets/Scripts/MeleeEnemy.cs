@@ -7,6 +7,16 @@ public class MeleeEnemy : EnemyBase
     public enum MeleeEnemyState { Idle, Chase, Attack }
     protected MeleeEnemyState currentState = MeleeEnemyState.Idle;
 
+    protected AudioSource audioSource;
+    public AudioClip zombieAttackAudio;
+
+    protected override void Start()
+    {
+        base.Start();
+
+        audioSource = GetComponent<AudioSource>();
+    }
+
     protected override void Update()
     {
         base.Update();
@@ -55,6 +65,8 @@ public class MeleeEnemy : EnemyBase
         if (!player.GetComponent<PlayerController>().isDead)
         {
             animator.SetTrigger("IsAttacking");
+            audioSource.clip = zombieAttackAudio;
+            audioSource.Play();
             lastAttackTime = Time.time;
 
             player.GetComponent<PlayerController>().TakeDamage(damage);

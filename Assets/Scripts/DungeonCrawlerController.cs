@@ -158,7 +158,7 @@ public class DungeonCrawlerController : MonoBehaviour
     {
         string message = ShowNodeTree(roomNodes[0]);
 
-        Debug.Log(message);
+        //Debug.Log(message);
     }
 
     private string ShowNodeTree(RoomNode actualRoom)
@@ -295,9 +295,9 @@ public class DungeonCrawlerController : MonoBehaviour
     {
         enemiesKilled++;
 
-        Debug.Log("Enemies killed: " + enemiesKilled);
-        Debug.Log("Enemies to kill: " + enemiesToKillOnActualRoom);
-        Debug.Log("ID room: " + actualRoom.GetComponent<Room>().thisRoomNode.id);
+        //Debug.Log("Enemies killed: " + enemiesKilled);
+        //Debug.Log("Enemies to kill: " + enemiesToKillOnActualRoom);
+        //Debug.Log("ID room: " + actualRoom.GetComponent<Room>().thisRoomNode.id);
 
         if(enemiesKilled == enemiesToKillOnActualRoom)
         {

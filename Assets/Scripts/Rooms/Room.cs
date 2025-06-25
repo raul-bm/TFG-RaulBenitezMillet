@@ -12,6 +12,8 @@ public class Room : MonoBehaviour
  
     public bool isCleared = false;
 
+    public bool isInitialized = false;
+
     public void SetDoors()
     {
         if (thisRoomNode.parent != null) SetDoors(thisRoomNode.parent);
@@ -59,6 +61,17 @@ public class Room : MonoBehaviour
         GameObject doorSpawn = roomNodeRoomScript.doors[doorRoomNodeObject].transform.GetChild(1).gameObject;
 
         doors[doorThisObject].GetComponent<Door>().doorSpawnOnOtherRoom = doorSpawn;
+
+        switch(roomNode.roomType)
+        {
+            case RoomType.Reward:
+                doors[doorThisObject].GetComponent<Door>().spriteRenderer.color = Color.yellow;
+                break;
+
+            case RoomType.Boss:
+                doors[doorThisObject].GetComponent<Door>().spriteRenderer.color = Color.red;
+                break;
+        }
     }
 
     #region DEBUG
@@ -71,7 +84,7 @@ public class Room : MonoBehaviour
 
         //textMPRoom.text = "(" + thisRoomNode.position.x + ", " + thisRoomNode.position.y + ")";
 
-        textMPRoom.text = thisRoomNode.id.ToString();
+        //textMPRoom.text = thisRoomNode.id.ToString();
     }
     #endregion
 
@@ -105,7 +118,5 @@ public class Room : MonoBehaviour
         {
             door.GetComponent<Door>().UnlockDoor();
         }
-
-        Debug.Log("b");
     }
 }

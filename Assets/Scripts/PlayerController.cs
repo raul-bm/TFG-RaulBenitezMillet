@@ -17,11 +17,16 @@ public class PlayerController : MonoBehaviour
     public SpriteRenderer crossguardSpriteRenderer;
     public SpriteRenderer bladeSpriteRenderer;
 
+    public AudioClip playerHurtAudio;
+    public AudioClip gameOverAudio;
+    public AudioClip playerAttackAudio;
+
     public bool isDead = false;
 
     private Rigidbody2D rb;
     private Animator animator;
     private DamageFlash damageFlash;
+    private AudioSource audioSource;
 
     private Vector2 moveInput;
     private Vector2 currentVelocity;
@@ -42,6 +47,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         damageFlash = GetComponent<DamageFlash>();
+        audioSource = GetComponent<AudioSource>();
 
         playerStats.InitBaseStats();
 
@@ -121,6 +127,9 @@ public class PlayerController : MonoBehaviour
         animator.SetInteger("facing", lastHorizontalDirection);
         animator.SetTrigger("isAttacking");
 
+        audioSource.clip = playerAttackAudio;
+        audioSource.Play();
+
         attackRangeHitbox.transform.position = transform.position + direction * distanceAttackHitboxFromPlayer;
 
         float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
@@ -177,7 +186,15 @@ public class PlayerController : MonoBehaviour
             animator.Play("Player_Death");
             isDead = true;
 
+            audioSource.clip = gameOverAudio;
+            audioSource.Play();
+
             StartCoroutine(ReturnToMainScreen());
+        }
+        else
+        {
+            audioSource.clip = playerHurtAudio;
+            audioSource.Play();
         }
     }
 

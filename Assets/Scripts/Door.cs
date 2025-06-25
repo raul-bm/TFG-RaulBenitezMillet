@@ -10,6 +10,7 @@ public class Door : MonoBehaviour
     public GameObject parentRoom;
 
     public Animator animator;
+    public SpriteRenderer spriteRenderer;
 
     private void Awake()
     {

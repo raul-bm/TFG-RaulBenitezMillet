@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1377537870815435138}
   - component: {fileID: 4870497054970755401}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PointerToPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: -723232095232966281}
   - component: {fileID: -3450507758118755882}
   - component: {fileID: 5899169757364070967}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Boss
   m_TagString: Boss
   m_Icon: {fileID: 0}
@@ -363,6 +363,10 @@ PrefabInstance:
       value: BossAttack2
       objectReference: {fileID: 0}
     - target: {fileID: 6768480595425879545, guid: 86b4a3e59a9bceb48acb7e9ec4fb4d47, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6768480595425879545, guid: 86b4a3e59a9bceb48acb7e9ec4fb4d47, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -432,6 +436,10 @@ PrefabInstance:
     - target: {fileID: 6768480595425879545, guid: 86b4a3e59a9bceb48acb7e9ec4fb4d47, type: 3}
       propertyPath: m_Name
       value: BossAttack1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6768480595425879545, guid: 86b4a3e59a9bceb48acb7e9ec4fb4d47, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6768480595425879545, guid: 86b4a3e59a9bceb48acb7e9ec4fb4d47, type: 3}
       propertyPath: m_IsActive
@@ -505,6 +513,10 @@ PrefabInstance:
       value: BossAttack4
       objectReference: {fileID: 0}
     - target: {fileID: 6768480595425879545, guid: 86b4a3e59a9bceb48acb7e9ec4fb4d47, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6768480595425879545, guid: 86b4a3e59a9bceb48acb7e9ec4fb4d47, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -574,6 +586,10 @@ PrefabInstance:
     - target: {fileID: 6768480595425879545, guid: 86b4a3e59a9bceb48acb7e9ec4fb4d47, type: 3}
       propertyPath: m_Name
       value: BossAttack3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6768480595425879545, guid: 86b4a3e59a9bceb48acb7e9ec4fb4d47, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6768480595425879545, guid: 86b4a3e59a9bceb48acb7e9ec4fb4d47, type: 3}
       propertyPath: m_IsActive

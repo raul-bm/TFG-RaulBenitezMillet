@@ -50,6 +50,11 @@ public class EnemyBase : MonoBehaviour
             isDead = true;
             animator.SetTrigger("IsDead");
 
+            foreach(var collider in GetComponents<BoxCollider2D>())
+            {
+                
+            }
+
             int moneyPlayer = PlayerPrefs.GetInt("moneyPlayer");
             moneyPlayer += moneyGivenToPlayerWhenKilled;
             PlayerPrefs.SetInt("moneyPlayer", moneyPlayer);
