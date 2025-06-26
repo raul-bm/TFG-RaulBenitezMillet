@@ -20,4 +20,6 @@ MonoBehaviour:
   setOfSword: 0
   statModifiers:
   - stat: 1
-    value: 2
+    value: 3
+  - stat: 0
+    value: 1

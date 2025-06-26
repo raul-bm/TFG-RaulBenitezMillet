@@ -17,10 +17,16 @@ MonoBehaviour:
   - stat: 1
     value: 3
   - stat: 0
-    value: -1
+    value: 1
   statModifiersThreeParts:
+  - stat: 1
+    value: 5
+  - stat: 0
+    value: 3
+  statModifiersFourParts:
+  - stat: 1
+    value: 6
+  - stat: 0
+    value: 4
   - stat: 3
     value: 2
-  statModifiersFourParts:
-  - stat: 2
-    value: 3

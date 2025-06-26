@@ -21,3 +21,5 @@ MonoBehaviour:
   statModifiers:
   - stat: 1
     value: 5
+  - stat: 2
+    value: 1
