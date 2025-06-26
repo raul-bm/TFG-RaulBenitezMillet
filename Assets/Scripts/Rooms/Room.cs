@@ -83,9 +83,9 @@ public class Room : MonoBehaviour
         else if (thisRoomNode.roomType == RoomType.Reward) textMPRoom.text = "Reward";
         else textMPRoom.text = "R" + thisRoomNode.id;*/
 
-        textMPRoom.text = "(" + thisRoomNode.position.x + ", " + thisRoomNode.position.y + ")";
+        //textMPRoom.text = "(" + thisRoomNode.position.x + ", " + thisRoomNode.position.y + ")";
 
-        textMPRoom.text += " - " + thisRoomNode.id.ToString();
+        //textMPRoom.text += " - " + thisRoomNode.id.ToString();
     }
     #endregion
 
