@@ -28,7 +28,7 @@ public class UI : MonoBehaviour
     IEnumerator LoadingScreenOff()
     {
         Time.timeScale = 0f;
-        yield return new WaitForSecondsRealtime(3f);
+        yield return new WaitForSecondsRealtime(1f);
         Time.timeScale = 1f;
         loadingScreen.SetActive(false);
         InventoryUI.Instance.loadingLevel = false;

@@ -33,6 +33,8 @@ public class PlayerController : MonoBehaviour
     private bool attacking;
 
     private float timerCooldown = 0f;
+    private float timerInvincibility = 0f;
+    public bool invincibility = false;
 
     private int lastHorizontalDirection = 1;
 
@@ -62,6 +64,16 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if(invincibility)
+        {
+            timerInvincibility += Time.deltaTime;
+
+            if (timerInvincibility >= 2f)
+            {
+                invincibility = false;
+            }
+        }
+
         // Attack cooldown
         if (attacking && timerCooldown <= currentAttackCooldown)
         {
@@ -116,6 +128,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void SetTimerInvincibility()
+    {
+        timerInvincibility = 0f;
+        invincibility = true;
+    }
+
     private void Attack()
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -128,6 +146,8 @@ public class PlayerController : MonoBehaviour
         animator.SetTrigger("isAttacking");
 
         audioSource.clip = playerAttackAudio;
+        System.Random random = new System.Random();
+        audioSource.pitch = (float)(0.7 + random.NextDouble() * (1.4 - 0.7));
         audioSource.Play();
 
         attackRangeHitbox.transform.position = transform.position + direction * distanceAttackHitboxFromPlayer;
@@ -175,27 +195,36 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        currentHealth -= damage;
+        if(!invincibility && !isDead)
+        {
+            currentHealth -= damage;
 
+            UI.Instance.healthImageFiller.fillAmount = currentHealth / maxHealth;
+
+            damageFlash.CallDamageFlash();
+
+            if (currentHealth <= 0)
+            {
+                animator.Play("Player_Death");
+                isDead = true;
+
+                audioSource.clip = gameOverAudio;
+                audioSource.Play();
+
+                StartCoroutine(ReturnToMainScreen());
+            }
+            else
+            {
+                audioSource.clip = playerHurtAudio;
+                audioSource.pitch = 1f;
+                audioSource.Play();
+            }
+        }
+    }
+
+    public void UpdateHealthOnLoad()
+    {
         UI.Instance.healthImageFiller.fillAmount = currentHealth / maxHealth;
-
-        damageFlash.CallDamageFlash();
-
-        if(currentHealth <= 0)
-        {
-            animator.Play("Player_Death");
-            isDead = true;
-
-            audioSource.clip = gameOverAudio;
-            audioSource.Play();
-
-            StartCoroutine(ReturnToMainScreen());
-        }
-        else
-        {
-            audioSource.clip = playerHurtAudio;
-            audioSource.Play();
-        }
     }
 
     private IEnumerator ReturnToMainScreen()

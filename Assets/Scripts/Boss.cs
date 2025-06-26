@@ -17,7 +17,7 @@ public class Boss : EnemyBase
     private bool cooldown = true;
     private float offsetDistance = 0.7f;
 
-    private bool alreadyCrossAttackPhase2 = false;
+    private System.Random random = new System.Random();
 
     const float TIME_CHARGE_ATTACK_PHASE1 = 2.5f;
     const float TIME_BETWEEN_ATTACKS_PHASE1 = 2f;
@@ -102,8 +102,10 @@ public class Boss : EnemyBase
             Vector2[] crossDirections = { Vector2.up, Vector2.down, Vector2.left, Vector2.right };
             float[] otherCrossAngles = { 45f, 135f, 225f, 315f };
 
+            bool isCrossAttack = random.Next(0, 2) == 0 ? true : false;
+
             // Cross attack launches
-            if(!alreadyCrossAttackPhase2)
+            if(!isCrossAttack)
             {
                 for(int i = 0; i < crossDirections.Length; i++)
                 {
@@ -115,8 +117,6 @@ public class Boss : EnemyBase
 
                     attackGameobjects[i].GetComponent<BossAttackProjectile>().StartProjectile(attackGameobjects[i].transform.position, attackGameobjects[i].transform.rotation);
                 }
-
-                alreadyCrossAttackPhase2 = true;
             }
             // X atack
             else
@@ -135,8 +135,6 @@ public class Boss : EnemyBase
 
                     attackGameobjects[i].GetComponent<BossAttackProjectile>().StartProjectile(attackGameobjects[i].transform.position, attackGameobjects[i].transform.rotation);
                 }
-
-                alreadyCrossAttackPhase2 = false;
             }
 
             cooldown = true;

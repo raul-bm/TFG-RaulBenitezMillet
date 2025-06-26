@@ -114,6 +114,8 @@ public class PlayerStats : MonoBehaviour
 
         if (modifier.stat == StatType.AttackRange || modifier.stat == StatType.AttackSpeed)
             currentStats[modifier.stat] = Mathf.Min(3.0f, Mathf.Max(1.0f, currentStats[modifier.stat]));
+        else if(modifier.stat == StatType.Damage)
+            currentStats[modifier.stat] = Mathf.Max(1.0f, currentStats[modifier.stat]);
     }
 
     public float GetStat(StatType type)

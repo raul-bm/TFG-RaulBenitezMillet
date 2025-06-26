@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public static class SaveSystem
 {
-    private static string saveFileRoute = Path.Combine(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Saves"), "saveFile.json");
+    private static string saveFileRoute = Path.Combine(Path.Combine(Application.persistentDataPath, "Saves"), "saveFile.json");
 
     public static void Save()
     {

@@ -8,6 +8,8 @@ public class Door : MonoBehaviour
 
     public GameObject doorSpawnOnOtherRoom;
     public GameObject parentRoom;
+    public GameObject spriteDoorGameobject;
+    public BoxCollider2D boxColliderDoor;
 
     public Animator animator;
     public SpriteRenderer spriteRenderer;
@@ -19,8 +21,11 @@ public class Door : MonoBehaviour
 
     public void DoorOpened()
     {
-        animator.SetTrigger("Open");
-        doorColliderNotEnter.SetActive(false);
+        if (spriteDoorGameobject.activeSelf)
+        {
+            animator.SetTrigger("Open");
+            doorColliderNotEnter.SetActive(false);
+        }
     }
 
     public void DoorClosed()
@@ -30,13 +35,16 @@ public class Door : MonoBehaviour
 
     public void UnlockDoor()
     {
-        doorColliderNotEnter.SetActive(false);
-        animator.SetTrigger("OpenDoor");
+        if(spriteDoorGameobject.activeSelf)
+        {
+            doorColliderNotEnter.SetActive(false);
+            animator.SetTrigger("OpenDoor");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && parentRoom.GetComponent<Room>().isCleared)
         {
             other.transform.position = doorSpawnOnOtherRoom.transform.position;
 
@@ -45,6 +53,7 @@ public class Door : MonoBehaviour
             MinimapManager.Instance.RevealRoom(otherRoom.GetComponent<Room>().thisRoomNode.position, otherRoom.GetComponent<Room>().thisRoomNode);
 
             other.GetComponent<PlayerController>().cameraController.ChangeCameraPosition(otherRoom);
+            other.GetComponent<PlayerController>().SetTimerInvincibility();
 
             otherRoom.GetComponent<Room>().InitializeRoom();
         }

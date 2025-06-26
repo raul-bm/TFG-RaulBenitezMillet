@@ -98,6 +98,11 @@ public class RoomNode
         this.distance = distance;
     }
 
+    public void SetParent(RoomNode parent)
+    {
+        this.parent = parent;
+    }
+
     public void SetPosition(Vector2Int position)
     {
         this.position = position;
@@ -128,6 +133,11 @@ public class RoomNode
     public void RoomCleared()
     {
         roomCleared = true;
+    }
+
+    public void DeleteDescendant(RoomNode deleted)
+    {
+        descendants.Remove(deleted);
     }
 
     public string GetSerializedType()

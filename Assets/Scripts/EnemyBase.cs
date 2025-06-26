@@ -22,12 +22,17 @@ public class EnemyBase : MonoBehaviour
 
     protected DamageFlash damageFlash;
 
+    protected AudioSource audioSource;
+    public AudioClip zombieAttackAudio;
+
     protected virtual void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         animator = GetComponent<Animator>();
 
-        if(GetComponent<DamageFlash>() != null)
+        audioSource = GetComponent<AudioSource>();
+
+        if (GetComponent<DamageFlash>() != null)
             damageFlash = GetComponent<DamageFlash>();
     }
 
@@ -49,8 +54,10 @@ public class EnemyBase : MonoBehaviour
         {
             isDead = true;
             animator.SetTrigger("IsDead");
+            audioSource.clip = zombieAttackAudio;
+            audioSource.Play();
 
-            foreach(var collider in GetComponents<BoxCollider2D>())
+            foreach (var collider in GetComponents<BoxCollider2D>())
             {
                 
             }

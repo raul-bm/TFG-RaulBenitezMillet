@@ -33,6 +33,8 @@ public class DungeonCrawlerController : MonoBehaviour
 
     public Room actualRoom;
 
+    private int roomId = 0;
+
     private void Awake()
     {
         Instance = this;
@@ -88,8 +90,8 @@ public class DungeonCrawlerController : MonoBehaviour
             actualLevel++;
 
             GenerateNodeTree();
-            //ShowNodeTree();
             SaveRoomPositions();
+            ShowNodeTree();
             ChangeRoomType();
             SetEnemiesCountInEachRoom();
             InstanceRooms();
@@ -122,7 +124,7 @@ public class DungeonCrawlerController : MonoBehaviour
 
         roomNodes.Clear();
 
-        int roomId = 0;
+        roomId = 0;
 
         RoomNode initialNode = new RoomNode(roomId++);
         initialNode.SetDistance(0);
@@ -158,7 +160,7 @@ public class DungeonCrawlerController : MonoBehaviour
     {
         string message = ShowNodeTree(roomNodes[0]);
 
-        //Debug.Log(message);
+        Debug.Log(message);
     }
 
     private string ShowNodeTree(RoomNode actualRoom)
@@ -192,10 +194,14 @@ public class DungeonCrawlerController : MonoBehaviour
     {
         List<Vector2Int> directionsAvailable = new List<Vector2Int>(directions);
 
+        List<RoomNode> roomNodesToDelete = new List<RoomNode>();
+
         foreach (RoomNode descendant in actualRoomNode.descendants)
         {
-            List<Vector2Int> directionsForCheck = new List<Vector2Int>(directionsAvailable);
-            Vector2Int directionGood;
+            RoomNode actualNode = actualRoomNode;
+
+            List<Vector2Int> directionsForCheck = new List<Vector2Int>(directions);
+            Vector2Int directionGood = new Vector2Int(0, 0);
             int emptyAvailable;
             bool directionFound = false;
 
@@ -206,28 +212,54 @@ public class DungeonCrawlerController : MonoBehaviour
 
                 //Debug.Log("Count: " + directionsForCheck.Count + " - ID: " + actualRoomNode.id + " - Descendant: " + descendant.id);
 
-                if(!roomPositions.ContainsKey(actualRoomNode.position + directionGood))
+                if (!roomPositions.ContainsKey(actualNode.position + directionGood))
                 {
                     emptyAvailable = 0;
                     for (int i = 0; i < directions.Count; i++)
                     {
-                        if (!roomPositions.ContainsKey(actualRoomNode.position + directionGood + directions[i])) emptyAvailable++;
+                        if (!roomPositions.ContainsKey(actualNode.position + directionGood + directions[i])) emptyAvailable++;
                     }
 
                     if (emptyAvailable >= descendant.descendants.Count) directionFound = true;
                 }
             } while (!directionFound && directionsForCheck.Count > 0);
 
-            // Aux room if good direction not found
+            if(!directionFound)
+            {
+                RoomNode otherNode;
+                int otherNodeNum = 0;
 
-            directionsAvailable.Remove(directionGood);
+                do
+                {
+                    otherNode = actualRoomNode.descendants[otherNodeNum];
+                    otherNodeNum++;
+                } while (otherNode == descendant || !otherNode.CanConnectMoreRooms());
 
-            /*Debug.Log(directionGood);
-            Debug.Log(actualRoomNode.position + directionGood);
-            Debug.Log(descendant.id);*/
-            Vector2Int positionNewRoom = actualRoomNode.position + directionGood;
-            descendant.SetPosition(positionNewRoom);
-            roomPositions.Add(positionNewRoom, descendant);
+                descendant.SetParent(otherNode);
+                otherNode.Connect(descendant);
+                roomNodesToDelete.Add(descendant);
+            }
+            else
+            {
+                directionsAvailable.Remove(directionGood);
+
+                Debug.Log(directionFound);
+
+                /*Debug.Log(directionGood);
+                Debug.Log(actualRoomNode.position + directionGood);
+                Debug.Log(descendant.id);*/
+                Vector2Int positionNewRoom = actualNode.position + directionGood;
+                descendant.SetPosition(positionNewRoom);
+
+                Debug.Log(descendant.id + " - " + positionNewRoom);
+
+                roomPositions.Add(positionNewRoom, descendant);
+            }
+        }
+
+        foreach (RoomNode roomNodeToDelete in roomNodesToDelete)
+        {
+            actualRoomNode.DeleteDescendant(roomNodeToDelete);
         }
 
         foreach(RoomNode descendant in actualRoomNode.descendants)
@@ -355,6 +387,7 @@ public class DungeonCrawlerController : MonoBehaviour
         player.transform.position = roomNodes[saveData.actualRoom].roomGameObject.transform.position;
 
         player.GetComponent<PlayerController>().currentHealth = saveData.playerHealth;
+        player.GetComponent<PlayerController>().UpdateHealthOnLoad();
 
         foreach(var inventoryObject in saveData.inventoryObjects)
         {
